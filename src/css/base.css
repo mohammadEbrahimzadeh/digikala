@@ -1,0 +1,266 @@
+* {
+  padding: 0 !important;
+  margin: 0 !important;
+  font-family: Byekan;
+}
+
+body {
+  min-width: 300px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+@font-face {
+  font-family: Byekan;
+  src: url("../Fonts/B_Yekan/Yekan.ttf");
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: var(--fontsm);
+}
+
+a:hover {
+  color: black;
+  background-color: rgba(0, 0, 0, 0.205);
+}
+
+input {
+  font-size: var(--fontsm);
+}
+
+li {
+  font-size: var(--fontmicro);
+}
+
+p {
+  font-size: var(--fontsm);
+}
+
+h1 {
+  font-size: var(--fontxxl);
+}
+
+h2 {
+  font-size: var(--fontxl);
+}
+
+@media only screen and (max-width: 577px) {
+  :root {
+    --fontmicro: 3.5vw;
+    --fontsm: 4vw;
+    --fontmd: 4.5vw;
+    --fontlg: 5vw;
+    --fontxl: 5.5vw;
+    --fontxxl: 6vw;
+  }
+}
+
+@media only screen and (min-width: 577px) {
+  :root {
+    --fontmicro: 1.75vw;
+    --fontsm: 2vw;
+    --fontmd: 2.5vw;
+    --fontlg: 3vw;
+    --fontxl: 3.25vw;
+    --fontxxl: 3.5vw;
+  }
+}
+
+.NavBar {
+  z-index: 3;
+}
+
+.NavBar .mainContainerNavbar button {
+  background-color: white;
+  border: none;
+  outline: none;
+}
+
+.NavBar .mainContainerNavbar input {
+  border: none;
+  outline: none;
+  direction: rtl;
+  background-color: #eeeeee;
+}
+
+.NavBar .mainContainerNavbar input:focus {
+  background-color: white;
+  border: 0.5px solid rgba(0, 0, 0, 0.144);
+  outline: none;
+  border-bottom: #00b7ff 2px solid;
+}
+
+.NavBar .mainContainerNavbar .containerDivLogin {
+  border: 0.5px solid rgba(0, 0, 0, 0.302);
+}
+
+.NavBar .mainContainerNavbar .containerDivLogin p {
+  font-size: var(--fontmicro);
+}
+
+.NavBar .mainContainerNavbar .containerDivSearchInput {
+  position: relative;
+}
+
+.NavBar .mainContainerNavbar .containerDivSearchInput .containerDivIcon {
+  position: absolute;
+  left: 2%;
+  margin: 0;
+  background: none;
+}
+
+.NavBar .mainContainerNavbar .containerDivSearchInput .containerDivIcon button {
+  width: 100%;
+  padding: 0.5vw;
+}
+
+.mainContainerMenu {
+  z-index: 2;
+}
+
+.mainContainerMenu ul {
+  z-index: 1;
+  position: relative;
+}
+
+.mainContainerMenu ul li {
+  width: 100%;
+  text-align: center;
+}
+
+.mainContainerMenu ul li::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ff0e0e;
+  transition: width 0.3s;
+}
+
+.mainContainerMenu ul li:hover::after {
+  width: 100%;
+}
+
+.mainContainerMenu ul .subMenu {
+  right: 0;
+  top: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.37);
+}
+
+.mainContainerMenu ul .subMenu li {
+  width: 100%;
+  text-align: center;
+  transition: 0.1s;
+}
+
+.mainContainerMenu ul .subMenu li::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s;
+}
+
+.mainContainerMenu ul .subMenu li:hover {
+  width: 100%;
+  color: red;
+}
+
+.Incredible .IncredibleContainerBoexes {
+  overflow-x: scroll;
+}
+
+.Incredible .IncredibleContainerBoexes::-webkit-scrollbar-thumb {
+  background: #7a3030;
+}
+
+.Incredible .IncredibleContainerBoexes::-webkit-scrollbar {
+  height: 10px;
+}
+
+.Incredible .IncredibleContainerBoexes .imgCoverForCards {
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 577px) {
+  .Incredible p {
+    font-size: 1rem;
+  }
+  .Incredible .BadgeDiscountPercent {
+    font-size: 0.5rem;
+    border-radius: 45px;
+  }
+}
+
+@media only screen and (min-width: 577px) {
+  .Incredible p {
+    font-size: 1rem;
+  }
+  .Incredible .BadgeDiscountPercent {
+    font-size: 0.7rem;
+    border-radius: 10px;
+  }
+}
+
+.Slider .containerSlideSwiper {
+  height: 50vh;
+}
+
+.Slider .containerSlideSwiper .swiper {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.Slider .containerSlideSwiper .swiper-slide {
+  text-align: center;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Slider .containerSlideSwiper .swiper-slide img {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.Slider .containerSlideSwiper .swiper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (max-width: 700px) {
+  .Home .containerSlideSwiper {
+    height: 20vh;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .CategoriesItemsHome p {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .RecommendationSubCategories p {
+    font-size: 1.3rem;
+  }
+}
+/*# sourceMappingURL=base.css.map */

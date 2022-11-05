@@ -1,0 +1,75 @@
+* {
+  padding: 0 !important ;
+  margin: 0 !important ;
+  font-family: Byekan;
+}
+body {
+  min-width: 300px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  padding: 0 !important ;
+  margin: 0 !important ;
+}
+@font-face {
+  font-family: Byekan;
+  src: url("../Fonts/B_Yekan/Yekan.ttf");
+}
+a {
+  color: black;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: var(--fontsm);
+
+  &:hover {
+    color: black;
+
+    background-color: rgba(0, 0, 0, 0.205);
+  }
+}
+input {
+  font-size: var(--fontsm);
+}
+li {
+  font-size: var(--fontmicro);
+}
+p {
+  font-size: var(--fontsm);
+}
+h1 {
+  font-size: var(--fontxxl);
+}
+h2 {
+  font-size: var(--fontxl);
+}
+@media only screen and (max-width: 577px) {
+  :root {
+    --fontmicro: 3.5vw;
+
+    --fontsm: 4vw;
+    --fontmd: 4.5vw;
+    --fontlg: 5vw;
+    --fontxl: 5.5vw;
+    --fontxxl: 6vw;
+  }
+}
+
+@media only screen and (min-width: 577px) {
+  :root {
+    --fontmicro: 1.75vw;
+    --fontsm: 2vw;
+    --fontmd: 2.5vw;
+    --fontlg: 3vw;
+    --fontxl: 3.25vw;
+    --fontxxl: 3.5vw;
+  }
+}
+@import "../GolobalComponents/NavBar/_NavBar";
+@import "../GolobalComponents/incredibles/_Incredible";
+@import "../Pages/Home/_Home";
