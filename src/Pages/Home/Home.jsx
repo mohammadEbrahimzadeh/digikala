@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Slider from "./../../GolobalComponents/Slider/Slider";
 import Incredible from "../../GolobalComponents/incredibles/Incredible";
 import CategoriesItemsHome from "./components/CategoriesItemsHome/CategoriesItemsHome";
-import RecommendationSubCategories from "./components/RecommendationSubCategories/CategoriesItemsHome";
+import RecommendationSubCategories from "./components/RecommendationSubCategories/RecommendationSubCategories";
 import SuggestionForYou from "./components/SuggestionForYou/SuggestionForYou";
 export default function Home() {
   return (
