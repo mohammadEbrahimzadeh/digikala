@@ -275,7 +275,7 @@ h2 {
 
 @media only screen and (max-width: 578px) {
   .DigiplusBaner .leftDIvMainDigiPlus span {
-    font-size: 1.3rem;
+    font-size: 0.7rem;
   }
   .DigiplusBaner .leftDIvMainDigiPlus .boxItemDigiPlus {
     overflow: scroll;
