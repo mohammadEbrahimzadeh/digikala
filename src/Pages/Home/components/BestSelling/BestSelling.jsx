@@ -18,7 +18,6 @@ export default function BestSelling() {
           </div>
           <div className="col-12 BestSellingBoxContainer d-flex flex-column  flex-wrap justify-content-evenly align-items-center ">
             {BestSellingArray.map((item, index) => {
-              console.log(item);
               return (
                 <div
                   key={item.id}

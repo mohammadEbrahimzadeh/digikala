@@ -335,4 +335,60 @@ h2 {
   font-size: 0.9rem;
   direction: rtl;
 }
+
+.Footer .contactTitleHeaderInFooter,
+.Footer .descriptionBoxsServices {
+  font-size: 0.9rem;
+  direction: rtl;
+}
+
+.Footer .contactTitleMediaInFooter {
+  font-size: 0.7rem;
+}
+
+.Footer .iconMediaFooter:hover {
+  color: rgba(0, 0, 0, 0.685);
+}
+
+.Footer .inputEmailInFooter {
+  outline: none;
+  background-color: #eee7e7;
+  height: 5vh;
+  border: none;
+}
+
+.Footer .liItemFooter {
+  transition: 0.2s;
+}
+
+.Footer .liItemFooter:hover {
+  color: red;
+}
+
+@media only screen and (max-width: 578px) {
+  .Footer .titleLiFooter {
+    font-size: 0.9rem;
+  }
+  .Footer .liItemFooter {
+    font-size: 0.7rem;
+  }
+}
+
+@media only screen and (min-width: 578px) {
+  .Footer .titleLiFooter {
+    font-size: 0.8rem;
+  }
+  .Footer .liItemFooter {
+    font-size: 0.6rem;
+  }
+}
+
+@media only screen and (min-width: 657px) {
+  .Footer .titleLiFooter {
+    font-size: 1rem;
+  }
+  .Footer .liItemFooter {
+    font-size: 0.8rem;
+  }
+}
 /*# sourceMappingURL=base.css.map */

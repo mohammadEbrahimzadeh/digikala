@@ -3,4 +3,60 @@
     font-size: 0.9rem;
     direction: rtl;
   }
+  .contactTitleHeaderInFooter,
+  .descriptionBoxsServices {
+    font-size: 0.9rem;
+    direction: rtl;
+  }
+  .contactTitleMediaInFooter {
+    font-size: 0.7rem;
+  }
+  .iconMediaFooter {
+    &:hover {
+      color: rgba(0, 0, 0, 0.685);
+    }
+  }
+  .inputEmailInFooter {
+    outline: none;
+    background-color: rgb(238, 231, 231);
+    height: 5vh;
+    border: none;
+  }
+  .liItemFooter {
+    transition: 0.2s;
+    &:hover {
+      color: red;
+    }
+  }
+}
+@media only screen and (max-width: 578px) {
+  .Footer {
+    .titleLiFooter {
+      font-size: 0.9rem;
+    }
+    .liItemFooter {
+      font-size: 0.7rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 578px) {
+  .Footer {
+    .titleLiFooter {
+      font-size: 0.8rem;
+    }
+    .liItemFooter {
+      font-size: 0.6rem;
+    }
+  }
+}
+@media only screen and (min-width: 657px) {
+  .Footer {
+    .titleLiFooter {
+      font-size: 1rem;
+    }
+    .liItemFooter {
+      font-size: 0.8rem;
+    }
+  }
 }

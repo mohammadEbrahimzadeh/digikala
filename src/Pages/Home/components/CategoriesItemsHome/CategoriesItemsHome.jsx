@@ -16,7 +16,7 @@ export default function CategoriesItemsHome() {
           <div className="col-12 d-flex justify-content-center align-items-center  mt-sm-4">
             <h1>دسته‌بندی‌های دیجی‌کالا</h1>
           </div>
-          <div className="d-flex flex-wrap  justify-content-evenly">
+          <div className="d-flex flex-wrap  justify-content-evenly align-items-start">
             {CategoriesArray.map((item) => {
               return (
                 <div

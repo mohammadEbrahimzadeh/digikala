@@ -3,7 +3,7 @@ import SuggestionBox from "./Components/SuggestionBox/SuggestionBox";
 export default function SuggestionForYou({ dataCategory }) {
   return (
     <>
-      <div className="SuggestionForYou flex-wrap px-3  d-flex">
+      <div className="SuggestionForYou flex-wrap px-3  d-flex ">
         {dataCategory.map((item) => {
           return (
             <SuggestionBox
