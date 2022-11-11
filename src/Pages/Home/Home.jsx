@@ -5,6 +5,7 @@ import CategoriesItemsHome from "./components/CategoriesItemsHome/CategoriesItem
 import RecommendationSubCategories from "./components/RecommendationSubCategories/RecommendationSubCategories";
 import SuggestionForYou from "./components/SuggestionForYou/SuggestionForYou";
 import DigiplusBaner from "./components/DigiplusBaner/DigiplusBaner";
+import BestSelling from "./components/BestSelling/BestSelling";
 export default function Home() {
   let dataListForSuggestionBoxs = [
     { id: 1, Title: "ساعت هوشمند", idCategory: "wearable-gadget" },
@@ -34,6 +35,7 @@ export default function Home() {
       <SuggestionForYou
         dataCategory={dataListForSuggestionBoxs.slice(4, 8)}
       ></SuggestionForYou>
+      <BestSelling></BestSelling>
     </div>
   );
 }

@@ -1,0 +1,42 @@
+.BestSelling {
+  .BestSellingBoxContainer {
+    height: 51vh;
+    overflow-x: scroll;
+    direction: rtl;
+
+    .numberDescriptionBox {
+      font-size: 1.5rem;
+    }
+    &::-webkit-scrollbar {
+      height: 0.5rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(128, 128, 128, 0.466);
+      border-radius: 10px;
+    }
+  }
+}
+@media only screen and (max-width: 578px) {
+  .BestSelling {
+    .BestSellingBoxContainer {
+      .descriptionBox {
+        font-size: 0.8rem;
+      }
+      .numberDescriptionBox {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 578px) {
+  .BestSelling {
+    .BestSellingBoxContainer {
+      .descriptionBox {
+        font-size: 0.9rem;
+      }
+      .numberDescriptionBox {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

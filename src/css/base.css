@@ -275,7 +275,7 @@ h2 {
 
 @media only screen and (max-width: 578px) {
   .DigiplusBaner .leftDIvMainDigiPlus span {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
   .DigiplusBaner .leftDIvMainDigiPlus .boxItemDigiPlus {
     overflow: scroll;
@@ -292,5 +292,47 @@ h2 {
   .DigiplusBaner .leftDIvMainDigiPlus span {
     font-size: 1rem;
   }
+}
+
+.BestSelling .BestSellingBoxContainer {
+  height: 51vh;
+  overflow-x: scroll;
+  direction: rtl;
+}
+
+.BestSelling .BestSellingBoxContainer .numberDescriptionBox {
+  font-size: 1.5rem;
+}
+
+.BestSelling .BestSellingBoxContainer::-webkit-scrollbar {
+  height: 0.5rem;
+}
+
+.BestSelling .BestSellingBoxContainer::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.466);
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 578px) {
+  .BestSelling .BestSellingBoxContainer .descriptionBox {
+    font-size: 0.8rem;
+  }
+  .BestSelling .BestSellingBoxContainer .numberDescriptionBox {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 578px) {
+  .BestSelling .BestSellingBoxContainer .descriptionBox {
+    font-size: 0.9rem;
+  }
+  .BestSelling .BestSellingBoxContainer .numberDescriptionBox {
+    font-size: 1.5rem;
+  }
+}
+
+.Footer .contactTitleHeaderInFooter {
+  font-size: 0.9rem;
+  direction: rtl;
 }
 /*# sourceMappingURL=base.css.map */
