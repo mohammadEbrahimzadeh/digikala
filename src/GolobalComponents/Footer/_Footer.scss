@@ -28,6 +28,9 @@
       color: red;
     }
   }
+  .titleEndOfFooter {
+    font-size: 0.7rem;
+  }
 }
 @media only screen and (max-width: 578px) {
   .Footer {
@@ -36,6 +39,12 @@
     }
     .liItemFooter {
       font-size: 0.7rem;
+    }
+    .titleInAccordion {
+      font-size: 1rem;
+    }
+    .bodyInAccordion {
+      font-size: 0.9rem;
     }
   }
 }
@@ -47,6 +56,12 @@
     }
     .liItemFooter {
       font-size: 0.6rem;
+    }
+    .titleInAccordion {
+      font-size: 1.1rem;
+    }
+    .bodyInAccordion {
+      font-size: 0.9rem;
     }
   }
 }
