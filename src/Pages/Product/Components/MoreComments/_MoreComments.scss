@@ -1,0 +1,36 @@
+.containerPageNaite {
+  .baseClassPageNaite {
+    font-size: 1.1rem;
+    background-color: white;
+
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0s;
+
+    &:hover {
+      border: 2px solid red;
+      color: red;
+      border-radius: 51%;
+      width: calc(20vw / 6);
+      height: calc(20vw / 6);
+      background-color: white;
+    }
+  }
+  .activePage {
+    border-radius: 51%;
+    width: calc(20vw / 6);
+    height: calc(20vw / 6);
+    color: white;
+    background-color: red;
+    border-radius: 51%;
+    width: calc(20vw / 6);
+    transition: 0s;
+    height: calc(20vw / 6);
+  }
+  .titleComent,
+  .buyerBadage {
+    font-size: 1.1rem;
+  }
+}

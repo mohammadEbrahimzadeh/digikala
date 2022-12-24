@@ -5,10 +5,7 @@ import {
   AiOutlineTwitter,
   AiOutlineInstagram,
 } from "react-icons/ai";
-import PriginalProducts from "../../Img/original-products";
-import DaysReturn from "../../Img/days-return";
-import Support from "../../Img/support";
-import CashDelivery from "../../Img/cash-on-delivery";
+
 import { SiAparat } from "react-icons/si";
 import Logo from "../../Img/logo.svg";
 import enama from "../../Img/enama.png";
@@ -17,7 +14,7 @@ import rezi from "../../Img/rezi.png";
 import Accordion from "react-bootstrap/Accordion";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import Card from "react-bootstrap/Card";
-
+import OptionsSendProduct from "../OptionsSendProduct/OptionsSendProduct";
 export default function Footer() {
   const [showMoreFlag, setshowMoreFlag] = useState(false);
   function CustomToggle({ eventKey }) {
@@ -37,7 +34,7 @@ export default function Footer() {
     );
   }
   return (
-    <div className="Footer p-3">
+    <div className="Footer  px-3">
       <div className="   col-12 d-flex align-items-center justify-content-between">
         <div className="d-flex justify-content-center align-items-center  ms-sm-5">
           <button
@@ -66,36 +63,9 @@ export default function Footer() {
           </p>
         </div>
       </div>
-      <div className="col-12 d-flex  flex-wrap justify-content-evenly mt-3 align-items-start">
-        <div className="col-sm-3 col-6 p-3 d-flex  flex-column justify-content-center align-items-center">
-          <PriginalProducts></PriginalProducts>
-          <p className="text-center  descriptionBoxsServices ">
-            ضمانت اصل بودن كالا
-          </p>
-        </div>
 
-        <div className="col-sm-3 col-6 p-3 d-flex  flex-column justify-content-center  align-items-center">
-          {" "}
-          <DaysReturn></DaysReturn>
-          <p className="text-center  descriptionBoxsServices ">
-            هفت روز ضمانت بازگشت كالا
-          </p>
-        </div>
-        <div className="col-sm-3 col-6 p-3 d-flex  flex-column justify-content-center align-items-center">
-          {" "}
-          <Support></Support>
-          <p className="text-center descriptionBoxsServices ">
-            پشتيباني 24 ساعته{" "}
-          </p>
-        </div>
-        <div className="col-sm-3 col-6 p-3 d-flex  flex-column justify-content-center align-items-center">
-          {" "}
-          <CashDelivery></CashDelivery>
-          <p className="text-center descriptionBoxsServices ">
-            امکان پرداخت در محل
-          </p>
-        </div>
-      </div>
+      <OptionsSendProduct></OptionsSendProduct>
+
       <div className="d-flex p-3 mt-sm-4 col-12 flex-wrap flex-sm-row  flex-column-reverse justify-content-evenly align-content-start gap-3 gap-sm-0">
         <div className="col-12 col-sm-3 pe-sm-2  gap-2 d-flex flex-column justify-content-center align-items-end">
           <div className=" d-flex justify-content-end">
@@ -120,15 +90,18 @@ export default function Footer() {
               با ثبت ایمیل، از جدید‌ترین تخفیف‌ها با‌خبر شوید
             </p>
           </div>
-          <div className="col-12 gap-3 gap-md-2 d-flex justify-content-center align-items-center">
+          <div className="col-12 gap-1  gap-md-2 d-flex justify-content-center align-items-center">
             <div className="col-2 d-flex justify-content-center align-items-center  ">
-              <button className="p-1 rounded-3 p-sm-2 bg-danger text-white border-0">
+              <button
+                className="p-1 rounded-3 p-sm-2 bg-danger text-white border-0"
+                style={{ fontSize: "0.9rem" }}
+              >
                 ثبت
               </button>
             </div>
             <div className="col-7 col-md-8">
               <input
-                className="w-100 px-1 py-2 py-sm-4 inputEmailInFooter"
+                className="w-100 px-1 py-2 py-sm-2 rounded-3 inputEmailInFooter"
                 placeholder="ایمیل شما"
                 dir="rtl"
                 type="text"
@@ -206,7 +179,6 @@ export default function Footer() {
           </p>
           <Accordion className="bg-white border-0">
             <Card className="bg-white border-0">
-              {" "}
               <Accordion.Collapse eventKey="0">
                 <Card.Body>
                   <div className="mt-3">

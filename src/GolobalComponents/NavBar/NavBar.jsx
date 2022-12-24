@@ -40,7 +40,7 @@ export default function NavBar() {
           <div className="  d-flex gap-3  align-items-center col-5  col-sm-3   justify-content-center">
             <div className=" ">
               <button className="p-0 ">
-                <p className="">
+                <p className="" style={{ fontSize: "1.1rem" }}>
                   <RiShoppingCartLine />
                 </p>
               </button>
@@ -60,25 +60,30 @@ export default function NavBar() {
           <div className="d-flex  col-7  gap-3 align-items-center justify-content-end">
             <div className=" col-sm-9 col-11 d-flex align-items-center  containerDivSearchInput">
               <input
+                style={{ fontSize: "1.0rem" }}
                 ref={inputSeach}
                 onBlur={blurInputBtnSearch}
                 onFocus={onclickInputSearch}
-                className="w-100 p-1"
+                className="w-100 p-1 pe-2"
                 type="text"
                 placeholder="جستجو  ..."
               />
               <div
                 className={`
-         
                containerDivIcon  `}
               >
                 {showIconSearch ? (
-                  <p className="p-0 m-0">
+                  <p className="p-0 m-0" style={{ fontSize: "0.9rem" }}>
                     <AiOutlineSearch></AiOutlineSearch>
                   </p>
                 ) : (
                   <button className="">
-                    <p className="text-danger m-0 p-0">-</p>
+                    <p
+                      className="text-danger m-0 p-0"
+                      style={{ fontSize: "0.8rem" }}
+                    >
+                      -
+                    </p>
                   </button>
                 )}
               </div>
@@ -88,37 +93,6 @@ export default function NavBar() {
             </div>
           </div>
         </div>
-        {/* <div className=" mainContainerMenu  d-none d-sm-block px-sm-5 p-1 position-sticky ">
-          <ul className="list-unstyled gap-4 d-flex flex-row-reverse">
-            <li onMouseLeave={leaveOnCatagory} onMouseOver={hoverOnCatagory}>
-              دسته بندی
-            </li>
-            <li>صفحه اصلی</li>
-            <li>سوپر مارکتی</li>
-            <li>پرفروش ترین ها</li>
-            <li>شگفت انگیز</li>
-            <li>سوالات متداول</li>
-            <div
-              onMouseOver={hoverOnCatagory}
-              onMouseLeave={leaveOnCatagory}
-              className={`${
-                showSubmeny ? "d-block  bg-light " : "d-none"
-              } subMenu col-4 p-3 position-absolute   `}
-            >
-              <ul className="list-unstyled  text-end justify-content-center align-items-end gap-4 d-flex flex-column">
-                {Categorys
-                  ? Categorys.categories.map((item) => {
-                      return (
-                        <li key={item.id} className="text-end ">
-                          {item.title_fa}
-                        </li>
-                      );
-                    })
-                  : ""}
-              </ul>
-            </div>
-          </ul>
-        </div> */}
       </div>
       <div className=" mainContainerMenu  d-none d-sm-block px-sm-5 p-1 position-sticky ">
         <ul className="list-unstyled gap-4 d-flex flex-row-reverse">

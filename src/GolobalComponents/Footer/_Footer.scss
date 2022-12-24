@@ -4,10 +4,6 @@
     direction: rtl;
   }
   .contactTitleHeaderInFooter,
-  .descriptionBoxsServices {
-    font-size: 0.9rem;
-    direction: rtl;
-  }
   .contactTitleMediaInFooter {
     font-size: 0.7rem;
   }
@@ -18,9 +14,10 @@
   }
   .inputEmailInFooter {
     outline: none;
-    background-color: rgb(238, 231, 231);
+    background-color: rgb(234, 234, 234);
     height: 5vh;
     border: none;
+    font-size: 0.9rem;
   }
   .liItemFooter {
     transition: 0.2s;

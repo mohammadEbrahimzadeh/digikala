@@ -4,7 +4,12 @@ import Product from "./Pages/Product/Product";
 const routes = [
   { path: "/", element: <Home /> },
   { path: "/home", element: <Home /> },
-  { path: "/product", element: <Product /> },
+  {
+    exact: false,
+    // ایدی متغیر است و از کامپوننت هدر می اید
+    path: "/product/:id",
+    element: <Product />,
+  },
   { path: "*", element: <Home /> },
 ];
 

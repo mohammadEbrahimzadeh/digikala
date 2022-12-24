@@ -57,6 +57,10 @@ h2 {
   font-size: var(--fontxl);
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 577px) {
   :root {
     --fontmicro: 3.5vw;
@@ -108,7 +112,7 @@ h2 {
 }
 
 .NavBar .mainContainerNavbar .containerDivLogin p {
-  font-size: var(--fontmicro);
+  font-size: 0.8rem;
 }
 
 .NavBar .mainContainerNavbar .containerDivSearchInput {
@@ -137,6 +141,7 @@ h2 {
 }
 
 .mainContainerMenu ul li {
+  font-size: 1rem;
   width: 100%;
   text-align: center;
 }
@@ -331,57 +336,29 @@ h2 {
   }
 }
 
-.Product .BreadcrumForProcuct {
-  font-size: 0.7rem;
-}
-
-.Product .SliderProduct .mySwiper {
-  width: 100%;
-}
-
-.Product .SliderProduct .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.Product .SliderProduct .swiper-slide img {
-  width: 100%;
-  object-fit: cover;
-}
-
-.Product .modalProdacts {
+.modalProdacts {
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.362);
 }
 
-.Product .modalProdacts .divContainerModal {
+.modalProdacts .divContainerModal {
   overflow: hidden;
-  height: 82%;
 }
 
-.Product .modalProdacts .divContainerModal p {
-  font-size: 1.2rem;
-}
-
-.Product .modalProdacts .divContainerModal .mainDivCOntentModal {
+.modalProdacts .divContainerModal .mainDivCOntentModal {
   height: 93%;
 }
 
-.Product .modalProdacts .divContainerModal .mainDivCOntentModal .mainDivForMiniPhotosProduct {
-  overflow-y: scroll;
+.modalProdacts .divContainerModal .mainDivCOntentModal .mainDivForMiniPhotosProduct {
+  overflow-y: auto;
 }
 
-.Product .modalProdacts .divContainerModal .mainDivCOntentModal .mainDivSlider .swiper {
+.modalProdacts .divContainerModal .mainDivCOntentModal .mainDivSlider .swiper {
   width: 100%;
   height: 100%;
 }
 
-.Product .modalProdacts .divContainerModal .mainDivCOntentModal .mainDivSlider .swiper-slide {
+.modalProdacts .divContainerModal .mainDivCOntentModal .mainDivSlider .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -391,11 +368,340 @@ h2 {
   align-items: center;
 }
 
-.Product .modalProdacts .divContainerModal .mainDivCOntentModal .mainDivSlider .swiper-slide img {
+.modalProdacts .divContainerModal .mainDivCOntentModal .mainDivSlider .swiper-slide img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 578px) {
+  .modalProdacts .divContainerModal p {
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (min-width: 578px) {
+  .modalProdacts .divContainerModal {
+    height: 82%;
+    top: 8%;
+  }
+  .modalProdacts .divContainerModal p {
+    font-size: 1.2rem;
+  }
+}
+
+.mainDivModal {
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.362);
+  overflow-y: scroll;
+}
+
+.mainDivModal .containerComments {
+  background-color: #dadada;
+}
+
+.mainDivModal .containerComments {
+  overflow-x: auto;
+}
+
+.mainDivModal .buyerBadage {
+  background-color: #eeeeee;
+  color: #6d6d6d;
+  font-size: 0.8rem;
+}
+
+@media only screen and (min-width: 578px) {
+  .commentCard {
+    border-bottom: 1px solid #bdbdbd;
+  }
+  .titleComent {
+    font-size: 1.1rem;
+  }
+}
+
+.BreadcrumbOfHeader .BreadcrumForProcuct {
+  font-size: 0.7rem;
+  text-align: end;
+}
+
+.mainDataDivPriduct .optionVipUserTitle,
+.mainDataDivPriduct .titleColorProduct,
+.mainDataDivPriduct .titleProduct {
+  font-size: 1rem;
+}
+
+.mainDataDivPriduct .titleServiseDiscription,
+.mainDataDivPriduct .listOption,
+.mainDataDivPriduct .btnBuyProduct {
+  font-size: 1rem;
+}
+
+.mainDataDivPriduct .discriptionSeller,
+.mainDataDivPriduct .discriptionProductrating {
+  font-size: 0.8rem;
+}
+
+.mainDataDivPriduct .containerColorsProduct {
+  overflow-x: auto;
+}
+
+.mainDataDivPriduct .listOption::before {
+  content: " \2022 ";
+  color: #868383;
+  margin-left: 0.5rem;
+}
+
+.mainDataDivPriduct .listOption .titleOption {
+  color: #868383;
+}
+
+.mainDataDivPriduct .iconOptionVipUser {
+  color: #943db1;
+}
+
+.mainDataDivPriduct .SliderProduct .mySwiper {
+  width: 100%;
+}
+
+.mainDataDivPriduct .SliderProduct .swiper-slide {
+  text-align: center;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainDataDivPriduct .SliderProduct .swiper-slide img {
+  width: 100%;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 578px) {
+  .mainDataDivPriduct {
+    font-size: 1.2rem;
+  }
+  .mainDataDivPriduct .boederSectionTop {
+    border-top: 10px solid #eae9e9;
+  }
+  .mainDataDivPriduct .containerForPriceProduct button {
+    font-size: 00.8rem;
+    font-weight: bold;
+  }
+  .mainDataDivPriduct .titleContainerDivseller {
+    font-size: 1rem;
+  }
+  .mainDataDivPriduct .titleOption {
+    font-size: 0.8rem;
+  }
+  .mainDataDivPriduct .titleProduct {
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (min-width: 578px) {
+  .mainDataDivPriduct .divContainerSelling {
+    background-color: #eeebeb;
+  }
+  .mainDataDivPriduct .titleProduct {
+    font-size: 1.2rem;
+  }
+  .mainDataDivPriduct .titleContainerDivseller {
+    font-size: 1.2rem;
+  }
+  .mainDataDivPriduct .titleOption {
+    font-size: 1.2rem;
+  }
+}
+
+.Recommendations .sliderRecommendations {
+  height: 100%;
+}
+
+.Recommendations .sliderRecommendations .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.Recommendations .sliderRecommendations .swiper-slide {
+  text-align: center;
+  background: #fff;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+}
+
+.Recommendations .sliderRecommendations img {
+  object-fit: cover;
+  height: 18vh;
+}
+
+@media only screen and (max-width: 578px) {
+  .Recommendations .titleRecommendations {
+    font-size: 1rem;
+  }
+  .Recommendations .titleRecommendationsProduct {
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (min-width: 578px) {
+  .Recommendations .titleRecommendations {
+    font-size: 0.9rem;
+  }
+  .Recommendations .titleRecommendationsProduct {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 578px) {
+  .InformaintionProduct .headerInfoProduct {
+    font-size: 0.8rem;
+  }
+  .InformaintionProduct .titleRecommendationsProduct {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 578px) {
+  .InformaintionProduct .headerInfoProduct {
+    font-size: 1.1rem;
+  }
+  .InformaintionProduct .titleRecommendationsProduct {
+    font-size: 1.3rem;
+  }
+}
+
+.containerPageNaite .baseClassPageNaite {
+  font-size: 1.1rem;
+  background-color: white;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0s;
+}
+
+.containerPageNaite .baseClassPageNaite:hover {
+  border: 2px solid red;
+  color: red;
+  border-radius: 51%;
+  width: calc(20vw / 6);
+  height: calc(20vw / 6);
+  background-color: white;
+}
+
+.containerPageNaite .activePage {
+  border-radius: 51%;
+  width: calc(20vw / 6);
+  height: calc(20vw / 6);
+  color: white;
+  background-color: red;
+  border-radius: 51%;
+  width: calc(20vw / 6);
+  transition: 0s;
+  height: calc(20vw / 6);
+}
+
+.containerPageNaite .titleComent,
+.containerPageNaite .buyerBadage {
+  font-size: 1.1rem;
+}
+
+.LastCommentsInDekstop .titleComponent {
+  font-size: 1.1rem;
+}
+
+.LastCommentsInDekstop .buyerBadage,
+.LastCommentsInDekstop .titleComent {
+  font-size: 1rem;
+}
+
+@media only screen and (max-width: 578px) {
+  .LastCommentsInDekstop .titleComponent {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 578px) {
+  .LastCommentsInDekstop .titleComponent {
+    font-size: 1.3rem;
+  }
+}
+
+.LastCommentsInMobile .titleComponent {
+  font-size: 0.9rem;
+}
+
+.LastCommentsInMobile .buyerBadage,
+.LastCommentsInMobile .MoreCommentsBtn,
+.LastCommentsInMobile .titleComent {
+  font-size: 0.8rem;
+}
+
+.LastCommentsInMobile .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.LastCommentsInMobile .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  width: 100%;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.LastCommentsInMobile .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.ModalMoreCommentsMobile {
+  z-index: 10;
+  background-color: gainsboro;
+}
+
+.ModalMoreCommentsMobile .commentCard {
+  border-radius: 15px;
+}
+
+.ModalMoreCommentsMobile .commentCard .titleComent,
+.ModalMoreCommentsMobile .commentCard .buyerBadage {
+  font-size: 0.8rem;
+}
+
+.ModalMoreCommentsMobile .baseClassPageNaite {
+  font-size: 1.1rem;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0s;
+}
+
+.ModalMoreCommentsMobile .activePage {
+  border-radius: 51%;
+  width: calc(60vw / 6);
+  height: calc(60vw / 6);
+  color: white;
+  background-color: red;
+  border-radius: 51%;
+  transition: 0s;
+}
+
+.ModalMoreCommentsMobile .titleComent,
+.ModalMoreCommentsMobile .buyerBadage {
+  font-size: 0.9rem;
 }
 
 .Footer .contactTitleHeaderInFooter {
@@ -404,11 +710,6 @@ h2 {
 }
 
 .Footer .contactTitleHeaderInFooter,
-.Footer .descriptionBoxsServices {
-  font-size: 0.9rem;
-  direction: rtl;
-}
-
 .Footer .contactTitleMediaInFooter {
   font-size: 0.7rem;
 }
@@ -419,9 +720,10 @@ h2 {
 
 .Footer .inputEmailInFooter {
   outline: none;
-  background-color: #eee7e7;
+  background-color: #eaeaea;
   height: 5vh;
   border: none;
+  font-size: 0.9rem;
 }
 
 .Footer .liItemFooter {
@@ -472,6 +774,36 @@ h2 {
   }
   .Footer .liItemFooter {
     font-size: 0.8rem;
+  }
+}
+
+.OptionsSendProduct .descriptionBoxsServices {
+  font-size: 0.9em;
+}
+
+.grayAllElems {
+  filter: grayscale(100%);
+}
+
+.Loader {
+  z-index: 12;
+  background-color: rgba(0, 0, 0, 0.41);
+}
+
+.Loader .classic-7 {
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 1.3rem;
+  color: #0000;
+  background: linear-gradient(90deg, red calc(50% + 0.5ch), #000 0) right/calc(200% + 1ch) 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: c7 1s infinite steps(11);
+}
+
+@keyframes c7 {
+  to {
+    background-position: left;
   }
 }
 /*# sourceMappingURL=base.css.map */

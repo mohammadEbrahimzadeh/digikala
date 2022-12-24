@@ -17,10 +17,9 @@ export default function Incredible() {
           <div className="IncredibleContainerBoexes col-9 col-sm-10 gap-3 p-2 bg-danger d-flex">
             {ArrayIncredibleProducts.map((item) => {
               let current_price = Math.floor(item.price.current_price / 10);
-
               current_price = Intl.NumberFormat().format(current_price);
-              let prev_price = Math.floor(item.price.prev_price / 10);
 
+              let prev_price = Math.floor(item.price.prev_price / 10);
               prev_price = Intl.NumberFormat().format(prev_price);
 
               return (

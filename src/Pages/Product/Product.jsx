@@ -1,172 +1,201 @@
-import React, { useRef, useState, useEffect } from "react";
-import { BsShop } from "react-icons/bs";
-import { MdOutlineReportGmailerrorred } from "react-icons/md";
-import { AiOutlineCloseCircle } from "react-icons/ai";
-import Breadcrumb from "react-bootstrap/Breadcrumb";
-import Box from "../../Img/box.png";
-import Box2 from "../../Img/digiplusPicBaner.png";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+import ReactPaginate from "react-paginate";
+import Loader from "../../GolobalComponents/Loader/Loader";
+import CommentsProduct from "../../Apis/CommentsProduct";
+import ModalGallaryDekstop from "./Components/ModalGallaryDekstop/ModalGallaryDekstop";
+import ModalShowAllCommentsMobaile from "./Components/ModalShowAllCommentsMobaile/ModalShowAllCommentsMobaile";
+import BreadcrumbOfHeader from "./Components/BreadcrumbOfHeader/BreadcrumbOfHeader";
+import HeaderPage from "./Components/HeaderPage/HeaderPage";
+import Recommendations from "./Components/Recommendations/Recommendations";
+import InformaintionProduct from "./Components/InformaintionProduct/InformaintionProduct";
+import MoreComments from "./Components/MoreComments/MoreComments";
+import LastCommentsInDekstop from "./Components/LastCommentsInDekstop/LastCommentsInDekstop";
+import LastCommentsInMobile from "./Components/LastCommentsInMobile/LastCommentsInMobile";
+import ModalMoreCommentsMobile from "./Components/ModalMoreCommentsMobile/ModalMoreCommentsMobile";
+import {
+  AiOutlineCloseCircle,
+  AiOutlineLike,
+  AiOutlineDislike,
+  AiOutlinePlus,
+  AiOutlineMinus,
+} from "react-icons/ai";
+import { FaRegMoneyBillAlt } from "react-icons/fa";
 import ProductsApi from "../../Apis/ProductsApi";
+import OptionsSendProduct from "../../GolobalComponents/OptionsSendProduct/OptionsSendProduct";
 export default function Product() {
-  const [ProductsApiArray, setProductsApiArray] = useState(0);
-  const swiperRef = useRef(null);
+  let { id } = useParams();
+  const navigate = useNavigate();
+
+  const [ProductsApiArray, setProductsApiArray] = useState();
+  const [IsOpenModalGallaryProduct, setIsOpenModalGallaryProduct] = useState(
+    false
+  );
+  const [ShowModalComments, setShowModalComments] = useState(false);
+  const [ActiveColor, setActiveColor] = useState(0);
+  const [ActiveColorName, setActiveColorName] = useState();
+  const [ProductCommentArray, setProductCommentArray] = useState();
+  const [NumberOfPageComment, setNumberOfPageComment] = useState(1);
+  const [
+    ShowModalMoreCommentsMobile,
+    setShowModalMoreCommentsMobile,
+  ] = useState(false);
+  const [TitleLoading, setTitleLoading] = useState();
 
   useEffect(() => {
-    ProductsApi("6460974").then((res) => {
-      setProductsApiArray(res.results);
+    ProductsApi(id).then((res) => {
+      setProductsApiArray(res);
+    });
+    CommentsProduct(id, NumberOfPageComment).then((res) => {
+      setProductCommentArray(res);
     });
   }, []);
+  useEffect(() => {
+    setTitleLoading("Loading...");
 
+    if (ProductsApiArray && ProductsApiArray.status !== 404) {
+      if (ProductsApiArray.results.product.mainDetails.colors.length > 0) {
+        setActiveColorName(
+          ProductsApiArray.results.product.mainDetails.colors[0].title
+        );
+      }
+    } else if (ProductsApiArray && ProductsApiArray.status == 404) {
+      reDirectToHome();
+    }
+  }, [ProductsApiArray]);
+  useEffect(() => {
+    if (ProductsApiArray && ProductsApiArray.status !== 404) {
+      CommentsProduct(id, NumberOfPageComment).then((res) => {
+        setProductCommentArray(res);
+      });
+    }
+  }, [NumberOfPageComment]);
+
+  function reDirectToHome() {
+    setTitleLoading("محصول یافت نشد");
+    setTimeout(() => {
+      navigate("/");
+      // return redirect("/");
+    }, 2000);
+  }
   return (
     <>
-      {ProductsApiArray ? (
-        <div className="Product p-3 position-relative ">
-          <div className="col-12 d-flex justify-content-between align-items-center flex-wrap">
-            <div className="col-12 d-none d-sm-flex justify-content-center align-items-center col-sm-4 ">
-              <button className="border-0  bg-white">
-                فروش در دیجیکالا <BsShop />
-              </button>
-            </div>
-            <div
-              className="col-12 col-sm-5   d-flex justify-content-evenly justify-content-sm-end
-       align-items-center"
-            >
-              <Breadcrumb className="  w-100 d-flex justify-content-center align-items-start">
-                <Breadcrumb.Item className="pt-0 p-0  px-1" active>
-                  <span className="BreadcrumForProcuct  "> کفش زنانه</span>
-                </Breadcrumb.Item>
-                <Breadcrumb.Item className="  p-0  px-1" href="#">
-                  <span className="BreadcrumForProcuct  "> کفش زنانه</span>
-                </Breadcrumb.Item>
-                <Breadcrumb.Item className="  p-0  px-1" href="#">
-                  <span className="BreadcrumForProcuct  "> کفش زنانه</span>
-                </Breadcrumb.Item>
-                <Breadcrumb.Item className="  p-0  px-1" href="#">
-                  <span className="BreadcrumForProcuct  "> کفش زنانه</span>
-                </Breadcrumb.Item>
-              </Breadcrumb>
-            </div>
-          </div>
-          <div className="mainDataDivPriduct d-flex justify-content-evenly align-items-start flex-wrap">
-            <div className=" d-sm-flex d-none col-6 col-sm-8 bg-danger">1</div>
-            <div className=" col-12 col-sm-4 d-none d-sm-flex justify-content-evenly align-items-center flex-wrap">
-              <div className="col-12 p-1">
-                <img src={Box} className="w-100" alt="" />
-              </div>
-              <div className="col-3 p-1 ">
-                {" "}
-                <img src={Box} className="w-100" alt="" />
-              </div>
-              <div className="col-3 p-1 ">
-                {" "}
-                <img src={Box} className="w-100" alt="" />
-              </div>
-              <div className="col-3 p-1 ">
-                {" "}
-                <img src={Box} className="w-100" alt="" />
-              </div>
-              <div className="col-3 p-1 ">
-                {" "}
-                <img src={Box} className="w-100" alt="" />
-              </div>
-              <div className="col-12 d-none d-sm-flex justify-content-end align-items-center mt-3">
-                <div className="col-4 text-center ">
-                  <p className="BreadcrumForProcuct">DKP-9435475</p>
-                </div>
-                <div className="col-6 BreadcrumForProcuct">
-                  <button className="border-0  bg-white">
-                    گزارش نادرستی مشخصات <MdOutlineReportGmailerrorred />
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="col-12  d-flex SliderProduct d-sm-none ">
-              <Swiper
-                pagination={{
-                  dynamicBullets: true,
-                }}
-                modules={[Pagination]}
-                className="mySwiper"
-              >
-                <SwiperSlide>
-                  <img src={Box} alt="" className="w-100 p-3" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src={Box} alt="" className="w-100 p-3" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src={Box} alt="" className="w-100 p-3" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src={Box} alt="" className="w-100 p-3" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src={Box} alt="" className="w-100 p-3" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src={Box} alt="" className="w-100 p-3" />
-                </SwiperSlide>
-              </Swiper>
-            </div>
-          </div>
-          <div className="position-fixed start-0 modalProdacts  d-flex  justify-content-center align-items-center top-0  bottom-0 w-100 h-100">
-            <div className="col-10 p-3 position-relative   divContainerModal bg-white">
-              <div className="d-flex px-5  justify-content-between align-items-center">
-                <div>
-                  <button className="bg-white border-0 fs-4">
-                    <AiOutlineCloseCircle></AiOutlineCloseCircle>
-                  </button>
-                </div>
-                <div className="text-danger border-bottom border-4 border-danger">
-                  <p className="text-dager px-2 fw-bold">تصاویر رسمی</p>
-                </div>
-              </div>
-              <div className="col-12 d-flex    mainDivCOntentModal">
-                <div className="col-6 mainDivForMiniPhotosProduct  flex-wrap  d-flex align-items-center justify-content-evenly">
-                  {ProductsApiArray.product.images.map((item, index) => {
-                    return (
-                      <div
-                        key={index}
-                        onClick={() => {
-                          swiperRef.current?.swiper.slideTo(index);
-                        }}
-                        className=" col-3  d-flex justify-content-center align-items-center"
-                      >
-                        <img src={item} className="w-100 p-3" alt="" />
-                      </div>
-                    );
-                  })}
-                </div>
-                <div className="col-6  mainDivSlider d-flex justify-content-center align-items-center">
-                  <Swiper
-                    ref={swiperRef}
-                    pagination={{
-                      dynamicBullets: true,
-                    }}
-                    navigation={true}
-                    modules={[Navigation, Pagination]}
-                    className="mySwiper .slideTo(3)"
-                  >
-                    {ProductsApiArray.product.images.map((item, index) => {
-                      return (
-                        <SwiperSlide key={index}>
-                          <img src={item} alt="" className="w-100 p-3" />
-                        </SwiperSlide>
-                      );
-                    })}
-                  </Swiper>
-                </div>
-              </div>
-            </div>
-          </div>
+      {ProductsApiArray &&
+      ProductsApiArray.status !== 404 &&
+      ProductCommentArray ? (
+        <div className="Product  p-3 pt-0 pt-sm-3 position-relative ">
+          {/* start modal gallary product */}
+          <ModalGallaryDekstop
+            ProductsApiArray={ProductsApiArray}
+            IsOpenModalGallaryProduct={IsOpenModalGallaryProduct}
+            setIsOpenModalGallaryProduct={setIsOpenModalGallaryProduct}
+            AiOutlineCloseCircle={AiOutlineCloseCircle}
+          ></ModalGallaryDekstop>
+          {/* end modal gallary product */}
+          {/* ------------ */}
+          {/* start show all comments modal */}
+          <ModalShowAllCommentsMobaile
+            ProductCommentArray={ProductCommentArray}
+            ShowModalComments={ShowModalComments}
+            setShowModalComments={setShowModalComments}
+            AiOutlineCloseCircle={AiOutlineCloseCircle}
+            AiOutlineLike={AiOutlineLike}
+            AiOutlineDislike={AiOutlineDislike}
+            AiOutlinePlus={AiOutlinePlus}
+            AiOutlineMinus={AiOutlineMinus}
+          ></ModalShowAllCommentsMobaile>
+          {/* end show all comments modal */}
+          {/* ------------ */}
+          {/* start heder Breadcrumb */}
+          <BreadcrumbOfHeader
+            ProductsApiArray={ProductsApiArray}
+          ></BreadcrumbOfHeader>
+          {/* end heder Breadcrumb */}
+          {/* ------------ */}
+          {/* start main content product section */}
+          <HeaderPage
+            ProductsApiArray={ProductsApiArray}
+            ActiveColorName={ActiveColorName}
+            setActiveColorName={setActiveColorName}
+            ActiveColor={ActiveColor}
+            setActiveColor={setActiveColor}
+            FaRegMoneyBillAlt={FaRegMoneyBillAlt}
+            setIsOpenModalGallaryProduct={setIsOpenModalGallaryProduct}
+          ></HeaderPage>
+          {/* ------------ */}
+          {/* start OptionsSendProduct section */}
+          <OptionsSendProduct
+            grayAllElems={"grayAllElems"}
+          ></OptionsSendProduct>
+          {/* end OptionsSendProduct section */}
+          {/* ------------ */}
+          {/* start recommendations product */}
+          <Recommendations
+            ProductsApiArray={ProductsApiArray}
+            FaRegMoneyBillAlt={FaRegMoneyBillAlt}
+          ></Recommendations>
+          {/* end recommendations product */}
+          {/* start imformaintion product */}
+          <InformaintionProduct
+            ProductsApiArray={ProductsApiArray}
+          ></InformaintionProduct>
+          {/* end imformaintion product */}
+          {/* start LastCommentsInDekstop */}
+          <LastCommentsInDekstop
+            ProductsApiArray={ProductsApiArray}
+            AiOutlineLike={AiOutlineLike}
+            AiOutlineDislike={AiOutlineDislike}
+            AiOutlinePlus={AiOutlinePlus}
+            AiOutlineMinus={AiOutlineMinus}
+          ></LastCommentsInDekstop>
+          {/* end LastCommentsInDekstop */}
+          {/* start LastCommentsInMobile */}
+          <LastCommentsInMobile
+            ProductsApiArray={ProductsApiArray}
+            AiOutlineLike={AiOutlineLike}
+            AiOutlineDislike={AiOutlineDislike}
+            AiOutlinePlus={AiOutlinePlus}
+            AiOutlineMinus={AiOutlineMinus}
+            setShowModalMoreCommentsMobile={setShowModalMoreCommentsMobile}
+          ></LastCommentsInMobile>
+          {/* end LastCommentsInMobile */}
+          {/* start comments product */}
+          <MoreComments
+            NumberOfPageComment={NumberOfPageComment}
+            CommentsProduct={CommentsProduct}
+            setProductCommentArray={setProductCommentArray}
+            ProductCommentArray={ProductCommentArray}
+            AiOutlineLike={AiOutlineLike}
+            AiOutlineDislike={AiOutlineDislike}
+            // 0------
+            setNumberOfPageComment={setNumberOfPageComment}
+            AiOutlinePlus={AiOutlinePlus}
+            AiOutlineMinus={AiOutlineMinus}
+            ReactPaginate={ReactPaginate}
+          ></MoreComments>{" "}
+          {/* end comments product */}
+          {/* start ModalMoreCommentsMobile */}
+          <ModalMoreCommentsMobile
+            ShowModalMoreCommentsMobile={ShowModalMoreCommentsMobile}
+            setShowModalMoreCommentsMobile={setShowModalMoreCommentsMobile}
+            ProductCommentArray={ProductCommentArray}
+            AiOutlineLike={AiOutlineLike}
+            AiOutlineDislike={AiOutlineDislike}
+            AiOutlinePlus={AiOutlinePlus}
+            AiOutlineMinus={AiOutlineMinus}
+            AiOutlineCloseCircle={AiOutlineCloseCircle}
+            ReactPaginate={ReactPaginate}
+            setNumberOfPageComment={setNumberOfPageComment}
+          ></ModalMoreCommentsMobile>
+          {/* end ModalMoreCommentsMobile */}
         </div>
-      ) : null}
+      ) : (
+        <>
+          <Loader TitleLoading={TitleLoading} />
+        </>
+      )}
     </>
   );
 }

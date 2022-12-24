@@ -1,0 +1,48 @@
+.Recommendations {
+  .sliderRecommendations {
+    height: 100%;
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      background: #fff;
+      /* Center slide text vertically */
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100%;
+    }
+    img {
+      -o-object-fit: cover;
+      object-fit: cover;
+      height: 18vh;
+      // width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 578px) {
+  .Recommendations {
+    .titleRecommendations {
+      font-size: 1rem;
+    }
+    .titleRecommendationsProduct {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 578px) {
+  .Recommendations {
+    .titleRecommendations {
+      font-size: 0.9rem;
+    }
+    .titleRecommendationsProduct {
+      font-size: 1.3rem;
+    }
+  }
+}

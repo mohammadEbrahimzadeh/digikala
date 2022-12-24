@@ -48,6 +48,9 @@ h1 {
 h2 {
   font-size: var(--fontxl);
 }
+.cursor-pointer {
+  cursor: pointer;
+}
 @media only screen and (max-width: 577px) {
   :root {
     --fontmicro: 3.5vw;
@@ -75,3 +78,5 @@ h2 {
 @import "../Pages/Home/_Home";
 @import "../Pages/Product/_Product";
 @import "../GolobalComponents/Footer/_Footer";
+@import "../GolobalComponents/OptionsSendProduct/_OptionsSendProduct";
+@import "../GolobalComponents/Loader/_Loader";

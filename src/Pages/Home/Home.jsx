@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import HomePage from "../../Apis/HomePage";
 import Slider from "./../../GolobalComponents/Slider/Slider";
 import Incredible from "../../GolobalComponents/incredibles/Incredible";
 import CategoriesItemsHome from "./components/CategoriesItemsHome/CategoriesItemsHome";
@@ -6,6 +7,7 @@ import RecommendationSubCategories from "./components/RecommendationSubCategorie
 import SuggestionForYou from "./components/SuggestionForYou/SuggestionForYou";
 import DigiplusBaner from "./components/DigiplusBaner/DigiplusBaner";
 import BestSelling from "./components/BestSelling/BestSelling";
+import Loader from "../../GolobalComponents/Loader/Loader";
 export default function Home() {
   let dataListForSuggestionBoxs = [
     { id: 1, Title: "ساعت هوشمند", idCategory: "wearable-gadget" },
@@ -21,21 +23,37 @@ export default function Home() {
     { id: 7, Title: "لوازم آرایشی", idCategory: "beauty" },
     { id: 8, Title: "بهداشتی", idCategory: "health-and-bathroom-tools" },
   ];
+  const [ArrayProductApi, setArrayProductApi] = useState();
 
+  useEffect(() => {
+    HomePage().then((res) => {
+      setArrayProductApi(res);
+    });
+  }, []);
   return (
-    <div className="Home">
-      <Slider></Slider>
-      <Incredible></Incredible>
-      <CategoriesItemsHome></CategoriesItemsHome>
-      <RecommendationSubCategories></RecommendationSubCategories>
-      <SuggestionForYou
-        dataCategory={dataListForSuggestionBoxs.slice(0, 4)}
-      ></SuggestionForYou>
-      <DigiplusBaner></DigiplusBaner>
-      <SuggestionForYou
-        dataCategory={dataListForSuggestionBoxs.slice(4, 8)}
-      ></SuggestionForYou>
-      <BestSelling></BestSelling>
-    </div>
+    <>
+      {ArrayProductApi ? (
+        <div className="Home">
+          <Slider></Slider>
+          <Incredible></Incredible>
+          <CategoriesItemsHome
+            ArrayProductApi={ArrayProductApi}
+          ></CategoriesItemsHome>
+          <RecommendationSubCategories
+            ArrayProductApi={ArrayProductApi}
+          ></RecommendationSubCategories>
+          <SuggestionForYou
+            dataCategory={dataListForSuggestionBoxs.slice(0, 4)}
+          ></SuggestionForYou>
+          <DigiplusBaner></DigiplusBaner>
+          <SuggestionForYou
+            dataCategory={dataListForSuggestionBoxs.slice(4, 8)}
+          ></SuggestionForYou>
+          <BestSelling ArrayProductApi={ArrayProductApi}></BestSelling>
+        </div>
+      ) : (
+        <Loader TitleLoading={"Loading..."}></Loader>
+      )}
+    </>
   );
 }

@@ -1,0 +1,32 @@
+.ModalMoreCommentsMobile {
+  z-index: 10;
+  background-color: rgb(220, 220, 220);
+  .commentCard {
+    border-radius: 15px;
+    .titleComent,
+    .buyerBadage {
+      font-size: 0.8rem;
+    }
+  }
+  .baseClassPageNaite {
+    font-size: 1.1rem;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0s;
+  }
+  .activePage {
+    border-radius: 51%;
+    width: calc(60vw / 6);
+    height: calc(60vw / 6);
+    color: white;
+    background-color: red;
+    border-radius: 51%;
+    transition: 0s;
+  }
+  .titleComent,
+  .buyerBadage {
+    font-size: 0.9rem;
+  }
+}

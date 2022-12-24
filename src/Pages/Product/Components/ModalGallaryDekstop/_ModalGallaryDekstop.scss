@@ -1,0 +1,60 @@
+.modalProdacts {
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.362);
+  .divContainerModal {
+    overflow: hidden;
+    .mainDivCOntentModal {
+      height: 93%;
+      .mainDivForMiniPhotosProduct {
+        overflow-y: auto;
+      }
+      .mainDivSlider {
+        .swiper {
+          width: 100%;
+          height: 100%;
+        }
+
+        .swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          background: #fff;
+
+          /* Center slide text vertically */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .swiper-slide img {
+          display: block;
+          width: 100%;
+          -o-object-fit: cover;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 578px) {
+  .modalProdacts {
+    .divContainerModal {
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+  // ---------
+}
+
+@media only screen and (min-width: 578px) {
+  .modalProdacts {
+    .divContainerModal {
+      height: 82%;
+      top: 8%;
+
+      p {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

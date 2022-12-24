@@ -1,0 +1,98 @@
+.mainDataDivPriduct {
+  .optionVipUserTitle,
+  .titleColorProduct,
+  .titleProduct {
+    font-size: 1rem;
+  }
+  .titleServiseDiscription,
+  .listOption,
+  .btnBuyProduct {
+    font-size: 1rem;
+  }
+  .discriptionSeller,
+  .discriptionProductrating {
+    font-size: 0.8rem;
+  }
+
+  .containerColorsProduct {
+    overflow-x: auto;
+  }
+  .listOption {
+    &::before {
+      content: " \2022 ";
+      color: rgb(134, 131, 131);
+      margin-left: 0.5rem;
+    }
+    .titleOption {
+      color: rgb(134, 131, 131);
+    }
+  }
+  .iconOptionVipUser {
+    color: rgb(148, 61, 177);
+  }
+  .SliderProduct {
+    .mySwiper {
+      width: 100%;
+    }
+    .swiper-slide {
+      text-align: center;
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+
+      -o-object-fit: cover;
+      object-fit: cover;
+    }
+  }
+}
+
+@media only screen and (max-width: 578px) {
+  // ---------
+  .mainDataDivPriduct {
+    .boederSectionTop {
+      border-top: 10px solid rgb(234, 233, 233);
+    }
+    .containerForPriceProduct {
+      button {
+        font-size: 00.8rem;
+        font-weight: bold;
+      }
+    }
+    .titleContainerDivseller {
+      font-size: 1rem;
+    }
+    .titleOption {
+      font-size: 0.8rem;
+    }
+    .titleProduct {
+      font-size: 0.9rem;
+    }
+    font-size: 1.2rem;
+  } // -----------
+}
+@media only screen and (min-width: 578px) {
+  // ---------
+  .mainDataDivPriduct {
+    .divContainerSelling {
+      background-color: rgb(238, 235, 235);
+    }
+    .titleProduct {
+      font-size: 1.2rem;
+    }
+    .titleContainerDivseller {
+      font-size: 1.2rem;
+    }
+    .titleOption {
+      font-size: 1.2rem;
+    }
+  }
+}

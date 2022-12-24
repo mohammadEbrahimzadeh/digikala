@@ -25,7 +25,7 @@
     .containerDivLogin {
       border: 0.5px solid rgba(0, 0, 0, 0.302);
       p {
-        font-size: var(--fontmicro);
+        font-size: 0.8rem;
       }
     }
     .containerDivSearchInput {
@@ -44,59 +44,15 @@
       }
     }
   }
-  // .mainContainerMenu {
-  //   ul {
-  //     z-index: 500000;
-  //     position: relative;
-  //     li {
-  //       width: 100%;
-  //       text-align: center;
-  //       &::after {
-  //         content: "";
-  //         display: block;
-  //         width: 0;
-  //         height: 2px;
-  //         background: rgb(255, 14, 14);
-  //         transition: width 0.3s;
-  //       }
-  //       &:hover::after {
-  //         width: 100%;
-  //         //transition: width .3s;
-  //       }
-  //     }
-  //     .subMenu {
-  //       right: 0;
-  //       top: 100%;
-  //       border: 1px solid rgba(0, 0, 0, 0.37);
-  //       li {
-  //         width: 100%;
-  //         text-align: center;
-  //         transition: 0.1s;
-  //         &::after {
-  //           content: "";
-  //           display: block;
-  //           width: 0;
-  //           height: 2px;
-  //           background: rgb(255, 255, 255);
-  //           transition: width 0.3s;
-  //         }
-  //         &:hover {
-  //           width: 100%;
-  //           color: red;
-  //           //transition: width .3s;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
 }
 .mainContainerMenu {
   z-index: 2;
-
   ul {
     z-index: 1;
     position: relative;
     li {
+      font-size: 1rem;
+
       width: 100%;
       text-align: center;
       &::after {

@@ -1,0 +1,26 @@
+.Loader {
+  z-index: 12;
+  background-color: rgba(0, 0, 0, 0.41);
+  .classic-7 {
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 1.3rem;
+    color: #0000;
+    background: linear-gradient(90deg, red calc(50% + 0.5ch), #000 0)
+      right/calc(200% + 1ch) 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-animation: c7 1s infinite steps(11);
+    animation: c7 1s infinite steps(11);
+  }
+  @-webkit-keyframes c7 {
+    to {
+      background-position: left;
+    }
+  }
+  @keyframes c7 {
+    to {
+      background-position: left;
+    }
+  }
+}
