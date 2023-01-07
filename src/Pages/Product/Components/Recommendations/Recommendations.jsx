@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, FreeMode } from "swiper";
@@ -50,37 +51,39 @@ export default function Recommendations({
             current_price = Intl.NumberFormat().format(current_price);
             return (
               <SwiperSlide key={index} className="col-12">
-                <div className="d-flex  p-2 flex-column align-items-center justify-content-center">
-                  <div className="col-12">
-                    <img src={item.image} alt="" className=" " />
-                  </div>
-                  <div className="col-12 mt-2 d-flex align-items-center justify-content-center">
-                    <p className="titleRecommendations ">{item.title_fa}</p>
-                  </div>
-                  <div className="col-12 d-flex justify-content-between align-items-center mt-2">
-                    <div className="d-flex">
-                      {item.price.discount_percent > 0 ? (
-                        <p className="titleRecommendations bg-danger text-white rounded-1 rounded p-1 rounded-pill">
-                          {item.price.discount_percent}%
+                <Link to={`/product/:${item.id}`}>
+                  <div className="d-flex  p-2 flex-column align-items-center justify-content-center">
+                    <div className="col-12">
+                      <img src={item.image} alt="" className=" " />
+                    </div>
+                    <div className="col-12 mt-2 d-flex align-items-center justify-content-center">
+                      <p className="titleRecommendations ">{item.title_fa}</p>
+                    </div>
+                    <div className="col-12 d-flex justify-content-between align-items-center mt-2">
+                      <div className="d-flex">
+                        {item.price.discount_percent > 0 ? (
+                          <p className="titleRecommendations bg-danger text-white rounded-1 rounded p-1 rounded-pill">
+                            {item.price.discount_percent}%
+                          </p>
+                        ) : null}
+                      </div>
+                      <div className="d-flex">
+                        <p className="titleRecommendations fw-bold">
+                          {item.price.discount_percent > 0
+                            ? current_price
+                            : prev_price}
                         </p>
-                      ) : null}
+                        &nbsp;
+                        <FaRegMoneyBillAlt></FaRegMoneyBillAlt>
+                      </div>
                     </div>
-                    <div className="d-flex">
-                      <p className="titleRecommendations fw-bold">
-                        {item.price.discount_percent > 0
-                          ? current_price
-                          : prev_price}
+                    <div className="col-12 d-flex justify-content-end align-items-center">
+                      <p className="titleRecommendations text-decoration-line-through text-secondary ms-2 ms-sm-4">
+                        {item.price.discount_percent > 0 ? prev_price : null}
                       </p>
-                      &nbsp;
-                      <FaRegMoneyBillAlt></FaRegMoneyBillAlt>
                     </div>
                   </div>
-                  <div className="col-12 d-flex justify-content-end align-items-center">
-                    <p className="titleRecommendations text-decoration-line-through text-secondary ms-2 ms-sm-4">
-                      {item.price.discount_percent > 0 ? prev_price : null}
-                    </p>
-                  </div>
-                </div>
+                </Link>
               </SwiperSlide>
             );
           })}

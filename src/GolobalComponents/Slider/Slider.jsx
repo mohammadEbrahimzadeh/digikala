@@ -23,8 +23,8 @@ export default function Slider() {
     setdata(banners);
   }, [banners]);
   return (
-    <div className="Slider">
-      <div className="containerSlideSwiper  ">
+    <div className="Slider col-12">
+      <div className="containerSlideSwiper w-100 col-12 h-100 ">
         {data ? (
           <Swiper
             slidesPerView={1}
@@ -37,8 +37,14 @@ export default function Slider() {
           >
             {banners.banners.map((item) => {
               return (
-                <SwiperSlide key={item.id} className="col-8 w-100">
-                  <img src={item.image} alt="" />
+                <SwiperSlide key={item.id} className="col-12 w-100">
+                  <div className="col-12 ">
+                    <img
+                      className="w-100   imgSliderHeaderHome"
+                      src={item.image}
+                      alt=""
+                    />
+                  </div>
                 </SwiperSlide>
               );
             })}

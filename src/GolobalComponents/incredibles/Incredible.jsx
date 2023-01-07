@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import AmazingTypo from "../../Img/AmazingTypo";
 import Badge from "react-bootstrap/Badge";
 import HomePage from "../../Apis/HomePage";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/free-mode";
+// import required modules
+import { FreeMode } from "swiper";
 export default function Incredible() {
   const [ArrayIncredibleProducts, setArrayIncredibleProducts] = useState();
   useEffect(() => {
@@ -11,48 +19,75 @@ export default function Incredible() {
   }, []);
 
   return (
-    <div className="Incredible mt-3 mt-sm-4  d-flex justify-content-center ">
+    <div className="Incredible   d-flex justify-content-center ">
       {ArrayIncredibleProducts ? (
-        <div className="bg-danger p-sm-1 col-12   col-sm-10 d-flex justify-content-evenly">
-          <div className="IncredibleContainerBoexes col-9 col-sm-10 gap-3 p-2 bg-danger d-flex">
-            {ArrayIncredibleProducts.map((item) => {
-              let current_price = Math.floor(item.price.current_price / 10);
-              current_price = Intl.NumberFormat().format(current_price);
+        <div className="bg-danger  col-12 p-3 gap-2  col-sm-12 d-flex justify-content-evenly">
+          <div className="IncredibleContainerBoexes   col-10 col-sm-10   d-flex">
+            <Swiper
+              dir="rtl"
+              freeMode={true}
+              modules={[FreeMode]}
+              className="mySwiper col-12 "
+              breakpoints={{
+                250: {
+                  slidesPerView: 2,
+                  spaceBetween: 5,
+                },
+                450: {
+                  slidesPerView: 3,
+                  spaceBetween: 5,
+                },
 
-              let prev_price = Math.floor(item.price.prev_price / 10);
-              prev_price = Intl.NumberFormat().format(prev_price);
+                750: {
+                  slidesPerView: 5,
 
-              return (
-                <div
-                  key={item.id}
-                  className="bg-light d-flex flex-column   p-2 col-6  col-sm-4 col-md-3 col-xl-2 "
-                >
-                  <div className="col-12  d-flex justify-content-center ">
-                    <img
-                      src={item.image}
-                      className="imgCoverForCards h-100 w-100"
-                      alt=""
-                    />
-                  </div>
-                  <div className="col-12 mt-1 ">
-                    <div className="d-flex justify-content-center ">
-                      <div className="d-flex gap-1 ps-0 px-sm-0 px-md-1   col-12 justify-content-between">
-                        <p>{current_price}</p>
-                        <Badge
-                          className="p-1 m-0 d-flex BadgeDiscountPercent   align-items-center"
-                          bg="danger"
-                        >
-                          {`${item.price.discount_percent}%`}
-                        </Badge>
+                  spaceBetween: 5,
+                },
+              }}
+            >
+              {ArrayIncredibleProducts.map((item) => {
+                let current_price = Math.floor(item.price.current_price / 10);
+                current_price = Intl.NumberFormat().format(current_price);
+
+                let prev_price = Math.floor(item.price.prev_price / 10);
+                prev_price = Intl.NumberFormat().format(prev_price);
+                return (
+                  <SwiperSlide className=" bg-white ms-1 col-10 " key={item.id}>
+                    <Link to={`/product/:${item.id}`}>
+                      <div className=" d-flex flex-column col-12 p-2">
+                        <div className="col-12  d-flex justify-content-center ">
+                          <img
+                            src={item.image}
+                            className="imgCoverForCards h-100 w-100"
+                            alt=""
+                          />
+                        </div>
+                        <div className="col-12 mt-1 ps-1 ">
+                          <div className="d-flex col-12 justify-content-center ">
+                            <div className="d-flex flex-wrap-reverse  col-12 justify-content-end gap-2">
+                              <div>
+                                <p>{current_price}</p>
+                              </div>
+                              <div>
+                                <Badge
+                                  className="p-1 m-0 d-flex BadgeDiscountPercent   align-items-center"
+                                  bg="danger"
+                                >
+                                  {`${item.price.discount_percent}%`}
+                                </Badge>
+                              </div>
+                            </div>
+                          </div>
+                          <div className=" text-start col-12 ps-1  opacity-50 text-decoration-line-through">
+                            <p>{prev_price}</p>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div className=" px-2 px-sm-2 px-md-3 opacity-50 text-decoration-line-through">
-                      <p>{prev_price}</p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+                    </Link>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
           </div>
           <div className="col-sm-1 col-2  d-flex flex-column justify-content-center text-center ">
             <AmazingTypo></AmazingTypo>

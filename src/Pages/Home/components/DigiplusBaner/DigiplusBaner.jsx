@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import DigiplusPicBaner from "../../../../Img/digiplusPicBaner.png";
 import { BsCashCoin } from "react-icons/bs";
 import CategoriesPage from "../../../../Apis/CategoriesPage";
@@ -35,7 +36,9 @@ export default function DigiplusBaner() {
                 {ProductsArray.slice(0, 6).map((item) => {
                   return (
                     <div key={item.id} className=" col-3  col-sm-6 p-1 ">
-                      <img src={item.image} className="w-100" alt="" />
+                      <Link to={`/product/:${item.id}`}>
+                        <img src={item.image} className="w-100" alt="" />
+                      </Link>
                     </div>
                   );
                 })}
@@ -60,7 +63,9 @@ export default function DigiplusBaner() {
                 {ProductsArray.slice(6, 12).map((item) => {
                   return (
                     <div key={item.id} className=" col-3  col-sm-6 p-1 ">
-                      <img src={item.image} className="w-100" alt="" />
+                      <Link to={`/product/:${item.id}`}>
+                        <img src={item.image} className="w-100" alt="" />
+                      </Link>
                     </div>
                   );
                 })}

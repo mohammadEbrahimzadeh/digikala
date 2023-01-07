@@ -28,7 +28,7 @@ import OptionsSendProduct from "../../GolobalComponents/OptionsSendProduct/Optio
 export default function Product() {
   let { id } = useParams();
   const navigate = useNavigate();
-
+  id = id.replace(":", "");
   const [ProductsApiArray, setProductsApiArray] = useState();
   const [IsOpenModalGallaryProduct, setIsOpenModalGallaryProduct] = useState(
     false
@@ -73,6 +73,15 @@ export default function Product() {
     }
   }, [NumberOfPageComment]);
 
+  useEffect(() => {
+    ProductsApi(id).then((res) => {
+      setProductsApiArray(res);
+    });
+    CommentsProduct(id, NumberOfPageComment).then((res) => {
+      setProductCommentArray(res);
+    });
+  }, [id]);
+
   function reDirectToHome() {
     setTitleLoading("محصول یافت نشد");
     setTimeout(() => {
@@ -96,16 +105,18 @@ export default function Product() {
           {/* end modal gallary product */}
           {/* ------------ */}
           {/* start show all comments modal */}
-          <ModalShowAllCommentsMobaile
-            ProductCommentArray={ProductCommentArray}
-            ShowModalComments={ShowModalComments}
-            setShowModalComments={setShowModalComments}
-            AiOutlineCloseCircle={AiOutlineCloseCircle}
-            AiOutlineLike={AiOutlineLike}
-            AiOutlineDislike={AiOutlineDislike}
-            AiOutlinePlus={AiOutlinePlus}
-            AiOutlineMinus={AiOutlineMinus}
-          ></ModalShowAllCommentsMobaile>
+          {ProductCommentArray.results.comments ? (
+            <ModalShowAllCommentsMobaile
+              ProductCommentArray={ProductCommentArray}
+              ShowModalComments={ShowModalComments}
+              setShowModalComments={setShowModalComments}
+              AiOutlineCloseCircle={AiOutlineCloseCircle}
+              AiOutlineLike={AiOutlineLike}
+              AiOutlineDislike={AiOutlineDislike}
+              AiOutlinePlus={AiOutlinePlus}
+              AiOutlineMinus={AiOutlineMinus}
+            ></ModalShowAllCommentsMobaile>
+          ) : null}
           {/* end show all comments modal */}
           {/* ------------ */}
           {/* start heder Breadcrumb */}
@@ -143,52 +154,61 @@ export default function Product() {
           ></InformaintionProduct>
           {/* end imformaintion product */}
           {/* start LastCommentsInDekstop */}
-          <LastCommentsInDekstop
-            ProductsApiArray={ProductsApiArray}
-            AiOutlineLike={AiOutlineLike}
-            AiOutlineDislike={AiOutlineDislike}
-            AiOutlinePlus={AiOutlinePlus}
-            AiOutlineMinus={AiOutlineMinus}
-          ></LastCommentsInDekstop>
+
+          {ProductsApiArray.results.product.last_comments.length > 0 ? (
+            <LastCommentsInDekstop
+              ProductsApiArray={ProductsApiArray}
+              AiOutlineLike={AiOutlineLike}
+              AiOutlineDislike={AiOutlineDislike}
+              AiOutlinePlus={AiOutlinePlus}
+              AiOutlineMinus={AiOutlineMinus}
+            ></LastCommentsInDekstop>
+          ) : null}
           {/* end LastCommentsInDekstop */}
           {/* start LastCommentsInMobile */}
-          <LastCommentsInMobile
-            ProductsApiArray={ProductsApiArray}
-            AiOutlineLike={AiOutlineLike}
-            AiOutlineDislike={AiOutlineDislike}
-            AiOutlinePlus={AiOutlinePlus}
-            AiOutlineMinus={AiOutlineMinus}
-            setShowModalMoreCommentsMobile={setShowModalMoreCommentsMobile}
-          ></LastCommentsInMobile>
+          {ProductsApiArray.results.product.last_comments.length > 0 ? (
+            <LastCommentsInMobile
+              ProductsApiArray={ProductsApiArray}
+              AiOutlineLike={AiOutlineLike}
+              AiOutlineDislike={AiOutlineDislike}
+              AiOutlinePlus={AiOutlinePlus}
+              AiOutlineMinus={AiOutlineMinus}
+              setShowModalMoreCommentsMobile={setShowModalMoreCommentsMobile}
+            ></LastCommentsInMobile>
+          ) : null}
           {/* end LastCommentsInMobile */}
           {/* start comments product */}
-          <MoreComments
-            NumberOfPageComment={NumberOfPageComment}
-            CommentsProduct={CommentsProduct}
-            setProductCommentArray={setProductCommentArray}
-            ProductCommentArray={ProductCommentArray}
-            AiOutlineLike={AiOutlineLike}
-            AiOutlineDislike={AiOutlineDislike}
-            // 0------
-            setNumberOfPageComment={setNumberOfPageComment}
-            AiOutlinePlus={AiOutlinePlus}
-            AiOutlineMinus={AiOutlineMinus}
-            ReactPaginate={ReactPaginate}
-          ></MoreComments>{" "}
+          {ProductCommentArray.results.comments ? (
+            <MoreComments
+              NumberOfPageComment={NumberOfPageComment}
+              CommentsProduct={CommentsProduct}
+              setProductCommentArray={setProductCommentArray}
+              ProductCommentArray={ProductCommentArray}
+              AiOutlineLike={AiOutlineLike}
+              AiOutlineDislike={AiOutlineDislike}
+              // 0------
+              setNumberOfPageComment={setNumberOfPageComment}
+              AiOutlinePlus={AiOutlinePlus}
+              AiOutlineMinus={AiOutlineMinus}
+              ReactPaginate={ReactPaginate}
+            ></MoreComments>
+          ) : null}
           {/* end comments product */}
           {/* start ModalMoreCommentsMobile */}
-          <ModalMoreCommentsMobile
-            ShowModalMoreCommentsMobile={ShowModalMoreCommentsMobile}
-            setShowModalMoreCommentsMobile={setShowModalMoreCommentsMobile}
-            ProductCommentArray={ProductCommentArray}
-            AiOutlineLike={AiOutlineLike}
-            AiOutlineDislike={AiOutlineDislike}
-            AiOutlinePlus={AiOutlinePlus}
-            AiOutlineMinus={AiOutlineMinus}
-            AiOutlineCloseCircle={AiOutlineCloseCircle}
-            ReactPaginate={ReactPaginate}
-            setNumberOfPageComment={setNumberOfPageComment}
-          ></ModalMoreCommentsMobile>
+          {ProductCommentArray.results.comments ? (
+            <ModalMoreCommentsMobile
+              ShowModalMoreCommentsMobile={ShowModalMoreCommentsMobile}
+              setShowModalMoreCommentsMobile={setShowModalMoreCommentsMobile}
+              ProductCommentArray={ProductCommentArray}
+              AiOutlineLike={AiOutlineLike}
+              AiOutlineDislike={AiOutlineDislike}
+              AiOutlinePlus={AiOutlinePlus}
+              AiOutlineMinus={AiOutlineMinus}
+              AiOutlineCloseCircle={AiOutlineCloseCircle}
+              ReactPaginate={ReactPaginate}
+              setNumberOfPageComment={setNumberOfPageComment}
+            ></ModalMoreCommentsMobile>
+          ) : null}
           {/* end ModalMoreCommentsMobile */}
         </div>
       ) : (

@@ -1,9 +1,9 @@
 .BestSelling {
+  a {
+    background-color: white;
+  }
   .BestSellingBoxContainer {
-    height: 51vh;
-    overflow-x: scroll;
     direction: rtl;
-
     .numberDescriptionBox {
       font-size: 1.5rem;
     }
@@ -15,10 +15,28 @@
       border-radius: 10px;
     }
   }
+  .mySwiper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .swiper {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    background: #fff;
+    height: calc((100%) / 3) !important;
+  }
 }
 @media only screen and (max-width: 578px) {
   .BestSelling {
     .BestSellingBoxContainer {
+      height: 40vh;
+
       .descriptionBox {
         font-size: 0.8rem;
       }
@@ -31,6 +49,8 @@
 @media only screen and (min-width: 578px) {
   .BestSelling {
     .BestSellingBoxContainer {
+      height: 50vh;
+
       .descriptionBox {
         font-size: 0.9rem;
       }

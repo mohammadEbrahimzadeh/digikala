@@ -185,19 +185,33 @@ h2 {
   color: red;
 }
 
-.Incredible .IncredibleContainerBoexes {
-  overflow-x: scroll;
-}
-
-.Incredible .IncredibleContainerBoexes::-webkit-scrollbar-thumb {
-  background: #7a3030;
-}
-
-.Incredible .IncredibleContainerBoexes::-webkit-scrollbar {
-  height: 10px;
+.Incredible a {
+  background-color: white;
 }
 
 .Incredible .IncredibleContainerBoexes .imgCoverForCards {
+  object-fit: cover;
+}
+
+.Incredible .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.Incredible .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Incredible .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -239,15 +253,23 @@ h2 {
   align-items: center;
 }
 
-.Slider .containerSlideSwiper .swiper-slide img {
-  display: block;
-  height: 100%;
-  width: 100%;
-}
-
 .Slider .containerSlideSwiper .swiper {
+  width: 100%;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media only screen and (max-width: 578px) {
+  .imgSliderHeaderHome {
+    height: 20vh;
+  }
+}
+
+@media only screen and (min-width: 578px) {
+  .imgSliderHeaderHome {
+    height: 50vh;
+  }
 }
 
 @media only screen and (max-width: 700px) {
@@ -299,9 +321,11 @@ h2 {
   }
 }
 
+.BestSelling a {
+  background-color: white;
+}
+
 .BestSelling .BestSellingBoxContainer {
-  height: 51vh;
-  overflow-x: scroll;
   direction: rtl;
 }
 
@@ -318,7 +342,28 @@ h2 {
   border-radius: 10px;
 }
 
+.BestSelling .mySwiper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.BestSelling .swiper {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.BestSelling .swiper-slide {
+  text-align: center;
+  background: #fff;
+  height: calc((100%) / 3) !important;
+}
+
 @media only screen and (max-width: 578px) {
+  .BestSelling .BestSellingBoxContainer {
+    height: 40vh;
+  }
   .BestSelling .BestSellingBoxContainer .descriptionBox {
     font-size: 0.8rem;
   }
@@ -328,6 +373,9 @@ h2 {
 }
 
 @media only screen and (min-width: 578px) {
+  .BestSelling .BestSellingBoxContainer {
+    height: 50vh;
+  }
   .BestSelling .BestSellingBoxContainer .descriptionBox {
     font-size: 0.9rem;
   }
@@ -514,6 +562,10 @@ h2 {
   .mainDataDivPriduct .titleOption {
     font-size: 1.2rem;
   }
+}
+
+.Recommendations a {
+  background-color: white;
 }
 
 .Recommendations .sliderRecommendations {
@@ -804,6 +856,50 @@ h2 {
 @keyframes c7 {
   to {
     background-position: left;
+  }
+}
+
+.Slider .containerSlideSwiper {
+  height: 50vh;
+}
+
+.Slider .containerSlideSwiper .swiper {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.Slider .containerSlideSwiper .swiper-slide {
+  text-align: center;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Slider .containerSlideSwiper .swiper {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (max-width: 578px) {
+  .imgSliderHeaderHome {
+    height: 20vh;
+  }
+}
+
+@media only screen and (min-width: 578px) {
+  .imgSliderHeaderHome {
+    height: 50vh;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .Home .containerSlideSwiper {
+    height: 20vh;
+    width: 100%;
   }
 }
 /*# sourceMappingURL=base.css.map */
