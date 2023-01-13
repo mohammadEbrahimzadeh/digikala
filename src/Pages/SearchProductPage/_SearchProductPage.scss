@@ -1,0 +1,34 @@
+.SearchProductPage {
+  a {
+    background-color: white;
+  }
+  .headerPage {
+    .textTitleCategory {
+      font-size: 1.3rem;
+    }
+    .titleItemCategory {
+      font-size: 0.9rem;
+    }
+  }
+  .containerMainContent {
+    .leftSideContent {
+      .textTitleItemProduct {
+        font-size: 1rem;
+      }
+    }
+    .rightSideContent {
+      position: relative;
+
+      .containerRightSideContent {
+        height: 100%;
+        .containerSticky {
+          position: -webkit-sticky;
+          top: 10%;
+          height: 90vh;
+          position: sticky;
+        }
+      }
+    }
+  }
+}
+@import "components/AccordionPrice/_AccordionPrice";

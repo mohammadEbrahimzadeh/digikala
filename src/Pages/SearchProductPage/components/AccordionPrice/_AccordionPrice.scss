@@ -1,0 +1,87 @@
+.AccordionPrice {
+  position: relative;
+  .headerAccordion {
+    z-index: 1;
+    background-color: white;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    .titleHeader {
+      font-size: 1.2rem;
+    }
+    &:hover {
+      border: 2px solid aqua;
+    }
+  }
+  .bodyAccordion {
+    overflow: hidden;
+    background-color: rgb(127, 197, 35);
+    position: absolute;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    z-index: -1;
+    .inputPrice {
+      outline: none;
+      border: none;
+      border-bottom: 1px solid black;
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+    }
+  }
+  .qq {
+    height: 100px;
+  }
+  .openBody {
+    -webkit-animation-name: openBodyAnime;
+    animation-name: openBodyAnime;
+  }
+  .closeBody {
+    -webkit-animation-name: closeBodyAnime;
+    animation-name: closeBodyAnime;
+  }
+
+  @-webkit-keyframes openBodyAnime {
+    0% {
+      height: 0%;
+    }
+
+    100% {
+      height: 100%;
+    }
+  }
+
+  @keyframes openBodyAnime {
+    0% {
+      height: 0;
+    }
+
+    100% {
+      height: 300%;
+    }
+  }
+
+  @-webkit-keyframes closeBodyAnime {
+    0% {
+      height: 200%;
+    }
+
+    100% {
+      height: 0%;
+    }
+  }
+
+  @keyframes closeBodyAnime {
+    0% {
+      height: 200%;
+    }
+
+    100% {
+      height: 0%;
+    }
+  }
+}

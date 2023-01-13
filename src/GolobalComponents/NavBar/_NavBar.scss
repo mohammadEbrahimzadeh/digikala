@@ -12,16 +12,19 @@
       direction: rtl;
       background-color: rgb(238, 238, 238);
 
-      &:focus {
-        background-color: rgb(255, 255, 255);
-
-        border: 0.5px solid rgba(0, 0, 0, 0.144);
-
-        outline: none;
-        border-bottom: rgb(0, 183, 255) 2px solid;
-      }
+      // &:focus {
+      //   background-color: rgb(255, 255, 255);
+      //   border: 0.5px solid rgba(0, 0, 0, 0.144);
+      //   outline: none;
+      //   border-bottom: rgb(0, 183, 255) 2px solid;
+      // }
     }
-
+    .focusInput {
+      background-color: white;
+      border: 0.5px solid rgba(0, 0, 0, 0.144);
+      outline: none;
+      border-bottom: rgb(0, 183, 255) 2px solid;
+    }
     .containerDivLogin {
       border: 0.5px solid rgba(0, 0, 0, 0.302);
       p {
@@ -30,17 +33,53 @@
     }
     .containerDivSearchInput {
       position: relative;
+
+      input {
+        z-index: 2;
+      }
       .containerDivIcon {
         position: absolute;
         left: 2%;
         margin: 0;
-
+        z-index: 3;
         background: none;
 
         button {
           width: 100%;
           padding: 0.5vw;
         }
+      }
+      .resultsSearchModal {
+        z-index: 2;
+
+        overflow-y: auto;
+        position: absolute;
+        top: 100%;
+        height: 70vh;
+        left: -85%;
+        right: 0%;
+        background-color: white;
+        .containerItemSearch {
+          &:hover {
+            background-color: rgb(206, 206, 206);
+          }
+        }
+        .itemText {
+          font-size: 1rem;
+        }
+        .itemTextSlider {
+          font-size: 0.85rem;
+        }
+      }
+      .backgroundModalResultSearch {
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        width: 100%;
+        background-color: rgba(75, 74, 74, 0.463);
+        top: 0;
+        height: 100%;
       }
     }
   }

@@ -30,6 +30,7 @@ export default function Home() {
       setArrayProductApi(res);
     });
   }, []);
+
   return (
     <>
       {ArrayProductApi ? (
