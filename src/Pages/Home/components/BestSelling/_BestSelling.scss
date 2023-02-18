@@ -3,6 +3,8 @@
     background-color: white;
   }
   .BestSellingBoxContainer {
+    height: 20rem;
+
     direction: rtl;
     .numberDescriptionBox {
       font-size: 1.5rem;
@@ -35,7 +37,7 @@
 @media only screen and (max-width: 578px) {
   .BestSelling {
     .BestSellingBoxContainer {
-      height: 40vh;
+      // height: 40vh;
 
       .descriptionBox {
         font-size: 0.8rem;
@@ -49,7 +51,7 @@
 @media only screen and (min-width: 578px) {
   .BestSelling {
     .BestSellingBoxContainer {
-      height: 50vh;
+      // height: 50vh;
 
       .descriptionBox {
         font-size: 0.9rem;

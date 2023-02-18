@@ -1,0 +1,135 @@
+.SearchProductPage {
+  a {
+    background-color: white;
+  }
+  .headerPage {
+    .textTitleCategory {
+      font-size: 1.3rem;
+    }
+    .titleItemCategory {
+      font-size: 0.9rem;
+    }
+  }
+  .containerMainContent {
+    .leftSideContent {
+      position: relative;
+
+      height: 100%;
+      .containerSticky {
+        position: -webkit-sticky;
+        position: sticky;
+      }
+      .itemFilter {
+        font-size: 0.9rem;
+        transition: 0.3s;
+        &:hover {
+          color: red;
+          cursor: pointer;
+          border-bottom: 2px solid red;
+        }
+      }
+      .textTitleItemProduct {
+        font-size: 0.9rem;
+      }
+    }
+    .rightSideContent {
+      .containerRightSideContent {
+        height: 100%;
+        .textItemSorting {
+          font-size: 0.9rem;
+          transition: 0.3s;
+        }
+        .containerSticky {
+          position: -webkit-sticky;
+          height: 90vh;
+          top: 5rem;
+          position: sticky;
+        }
+      }
+    }
+    .openShowModalSort {
+      -webkit-animation-name: openShowModalSortAnime;
+      animation-name: openShowModalSortAnime;
+    }
+    .closeShowModalSort {
+      -webkit-animation-name: closeShowModalSortAnime;
+      animation-name: closeShowModalSortAnime;
+    }
+  }
+
+  @-webkit-keyframes openShowModalSortAnime {
+    0% {
+      top: 100%;
+    }
+    100% {
+      top: 10rem;
+      border: 1px solid aqua;
+    }
+  }
+
+  @keyframes openShowModalSortAnime {
+    0% {
+      top: 100%;
+    }
+    100% {
+      top: 10rem;
+      border: 1px solid aqua;
+    }
+  }
+
+  @-webkit-keyframes closeShowModalSortAnime {
+    0% {
+      top: 10rem;
+    }
+    100% {
+      top: 100%;
+    }
+  }
+
+  @keyframes closeShowModalSortAnime {
+    0% {
+      top: 10rem;
+    }
+    100% {
+      top: 100%;
+    }
+  }
+}
+@media only screen and (max-width: 578px) {
+  .SearchProductPage {
+    .leftSideContent {
+      .containerSticky {
+        top: 5.5rem;
+      }
+    }
+    .rightSideContent {
+      overflow-y: auto;
+      position: fixed;
+      z-index: 1;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      background-color: white;
+      -webkit-animation-duration: 0.3s;
+      animation-duration: 0.3s;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+@media only screen and (min-width: 578px) {
+  .SearchProductPage {
+    .leftSideContent {
+      .containerSticky {
+        top: 4.5rem;
+      }
+    }
+    .rightSideContent {
+      position: relative;
+      height: 100%;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.ContactUs {
+  .inputContactUs {
+    outline: none;
+    caret-color: red;
+    border: 1px solid rgba(0, 0, 0, 0.406);
+  }
+  .boxCalender {
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}
+.popupPad {
+  padding: 3rem !important ;
+}
+.confirmButtonPad {
+  margin-top: 2rem !important;
+  padding: 0.5rem !important ;
+}

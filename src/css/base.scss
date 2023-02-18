@@ -51,6 +51,27 @@ h2 {
 .cursor-pointer {
   cursor: pointer;
 }
+.video-react .video-react-big-play-button.video-react-big-play-button-center {
+  top: 45% !important;
+  left: 40% !important;
+}
+.video-react
+  .video-react-volume-menu-button.video-react-menu-button-inline
+  .video-react-menu-content {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.video-react .video-react-bezel {
+  position: absolute;
+  left: 45% !important;
+  top: 45% !important;
+  width: 52px;
+  height: 52px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
 @media only screen and (max-width: 577px) {
   :root {
     --fontmicro: 3.5vw;
@@ -81,4 +102,9 @@ h2 {
 @import "../GolobalComponents/OptionsSendProduct/_OptionsSendProduct";
 @import "../GolobalComponents/Loader/_Loader";
 @import "../GolobalComponents/Slider/_Slider";
-@import "../Pages/SearchProductPage/_SearchProductPage";
+@import "../Pages/SearchPage/_SearchPage";
+@import "../Pages/FAQ/_FAQ.scss";
+@import "../Pages/SellInShop/_SellInShop.scss";
+@import "../Pages/ContactUs/_ContactUs.scss";
+@import "../Pages/ReturnProduct/_ReturnProduct.scss";
+@import "../Pages/WarrantyShop/_WarrantyShop.scss";

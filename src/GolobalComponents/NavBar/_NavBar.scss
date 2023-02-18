@@ -86,14 +86,17 @@
 }
 .mainContainerMenu {
   z-index: 2;
+
   ul {
     z-index: 1;
     position: relative;
     li {
-      font-size: 1rem;
-
-      width: 100%;
-      text-align: center;
+      p {
+        font-size: 1rem;
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+      }
       &::after {
         content: "";
         display: block;
@@ -104,17 +107,27 @@
       }
       &:hover::after {
         width: 100%;
+        cursor: pointer;
         //transition: width .3s;
+      }
+      a {
+        p {
+          font-size: 1rem;
+          width: 100%;
+          text-align: center;
+          background-color: white;
+        }
       }
     }
     .subMenu {
-      right: 0;
+      right: 16%;
       top: 100%;
       border: 1px solid rgba(0, 0, 0, 0.37);
       li {
         width: 100%;
         text-align: center;
         transition: 0.1s;
+        font-size: 1rem;
         &::after {
           content: "";
           display: block;
@@ -130,5 +143,100 @@
         }
       }
     }
+  }
+}
+.sectionMenu {
+  background-color: rgba(0, 0, 0, 0.612);
+  z-index: 20;
+  top: 0;
+  bottom: 0;
+  right: -100%;
+
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.containerMenuMobile {
+  right: -100%;
+
+  z-index: 31;
+  top: 0;
+  bottom: 0;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  .subMenuMobile {
+    overflow: auto;
+    right: 100%;
+    top: 0%;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.37);
+
+    li {
+      width: 100%;
+      text-align: center;
+      transition: 0.1s;
+      font-size: 0.9rem;
+      &::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: rgb(255, 255, 255);
+        transition: width 0.3s;
+      }
+      &:hover {
+        width: 100%;
+        color: red;
+        //transition: width .3s;
+      }
+    }
+  }
+}
+.openMenuMobile {
+  -webkit-animation-name: openMenuMobileAnime;
+  animation-name: openMenuMobileAnime;
+}
+.closeMenuMobile {
+  -webkit-animation-name: closeMenuMobileAnime;
+  animation-name: closeMenuMobileAnime;
+  right: -100%;
+}
+
+@-webkit-keyframes closeMenuMobileAnime {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: -100%;
+  }
+}
+
+@keyframes closeMenuMobileAnime {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: -100%;
+  }
+}
+
+@-webkit-keyframes openMenuMobileAnime {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0%;
+  }
+}
+
+@keyframes openMenuMobileAnime {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0%;
   }
 }

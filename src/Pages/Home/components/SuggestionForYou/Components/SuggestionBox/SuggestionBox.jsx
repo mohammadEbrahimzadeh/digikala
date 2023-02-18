@@ -5,14 +5,16 @@ export default function SuggestionBox({ Title, CategoryName }) {
   const [CategoriesArray, setCategoriesArray] = useState();
   useEffect(() => {
     CategoriesPage(CategoryName, 1).then((res) => {
-      setCategoriesArray(res.results.products.slice(0, 4));
+      if (res.results) {
+        setCategoriesArray(res.results.products.slice(0, 4));
+      }
     });
   }, []);
 
   return (
     <>
       {CategoriesArray ? (
-        <div className="col-6  d-flex flex-column gap-3  col-sm-3  p-3">
+        <div className="col-6   d-flex flex-column gap-3  col-sm-3  p-3">
           <div className="d-flex justify-content-end text-center ">
             <p>{Title}</p>
           </div>

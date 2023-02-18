@@ -61,6 +61,30 @@ h2 {
   cursor: pointer;
 }
 
+.video-react .video-react-big-play-button.video-react-big-play-button-center {
+  top: 45% !important;
+  left: 40% !important;
+}
+
+.video-react
+.video-react-volume-menu-button.video-react-menu-button-inline
+.video-react-menu-content {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.video-react .video-react-bezel {
+  position: absolute;
+  left: 45% !important;
+  top: 45% !important;
+  width: 52px;
+  height: 52px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
 @media only screen and (max-width: 577px) {
   :root {
     --fontmicro: 3.5vw;
@@ -179,10 +203,11 @@ h2 {
   position: relative;
 }
 
-.mainContainerMenu ul li {
+.mainContainerMenu ul li p {
   font-size: 1rem;
   width: 100%;
   text-align: center;
+  cursor: pointer;
 }
 
 .mainContainerMenu ul li::after {
@@ -196,10 +221,18 @@ h2 {
 
 .mainContainerMenu ul li:hover::after {
   width: 100%;
+  cursor: pointer;
+}
+
+.mainContainerMenu ul li a p {
+  font-size: 1rem;
+  width: 100%;
+  text-align: center;
+  background-color: white;
 }
 
 .mainContainerMenu ul .subMenu {
-  right: 0;
+  right: 16%;
   top: 100%;
   border: 1px solid rgba(0, 0, 0, 0.37);
 }
@@ -208,6 +241,7 @@ h2 {
   width: 100%;
   text-align: center;
   transition: 0.1s;
+  font-size: 1rem;
 }
 
 .mainContainerMenu ul .subMenu li::after {
@@ -222,6 +256,81 @@ h2 {
 .mainContainerMenu ul .subMenu li:hover {
   width: 100%;
   color: red;
+}
+
+.sectionMenu {
+  background-color: rgba(0, 0, 0, 0.612);
+  z-index: 20;
+  top: 0;
+  bottom: 0;
+  right: -100%;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.containerMenuMobile {
+  right: -100%;
+  z-index: 31;
+  top: 0;
+  bottom: 0;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.containerMenuMobile .subMenuMobile {
+  overflow: auto;
+  right: 100%;
+  top: 0%;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.37);
+}
+
+.containerMenuMobile .subMenuMobile li {
+  width: 100%;
+  text-align: center;
+  transition: 0.1s;
+  font-size: 0.9rem;
+}
+
+.containerMenuMobile .subMenuMobile li::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s;
+}
+
+.containerMenuMobile .subMenuMobile li:hover {
+  width: 100%;
+  color: red;
+}
+
+.openMenuMobile {
+  animation-name: openMenuMobileAnime;
+}
+
+.closeMenuMobile {
+  animation-name: closeMenuMobileAnime;
+  right: -100%;
+}
+
+@keyframes closeMenuMobileAnime {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: -100%;
+  }
+}
+
+@keyframes openMenuMobileAnime {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0%;
+  }
 }
 
 .Incredible a {
@@ -365,6 +474,7 @@ h2 {
 }
 
 .BestSelling .BestSellingBoxContainer {
+  height: 20rem;
   direction: rtl;
 }
 
@@ -400,9 +510,6 @@ h2 {
 }
 
 @media only screen and (max-width: 578px) {
-  .BestSelling .BestSellingBoxContainer {
-    height: 40vh;
-  }
   .BestSelling .BestSellingBoxContainer .descriptionBox {
     font-size: 0.8rem;
   }
@@ -412,9 +519,6 @@ h2 {
 }
 
 @media only screen and (min-width: 578px) {
-  .BestSelling .BestSellingBoxContainer {
-    height: 50vh;
-  }
   .BestSelling .BestSellingBoxContainer .descriptionBox {
     font-size: 0.9rem;
   }
@@ -954,23 +1058,101 @@ h2 {
   font-size: 0.9rem;
 }
 
-.SearchProductPage .containerMainContent .leftSideContent .textTitleItemProduct {
-  font-size: 1rem;
+.SearchProductPage .containerMainContent .leftSideContent {
+  position: relative;
+  height: 100%;
 }
 
-.SearchProductPage .containerMainContent .rightSideContent {
-  position: relative;
+.SearchProductPage .containerMainContent .leftSideContent .containerSticky {
+  position: sticky;
+}
+
+.SearchProductPage .containerMainContent .leftSideContent .itemFilter {
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.SearchProductPage .containerMainContent .leftSideContent .itemFilter:hover {
+  color: red;
+  cursor: pointer;
+  border-bottom: 2px solid red;
+}
+
+.SearchProductPage .containerMainContent .leftSideContent .textTitleItemProduct {
+  font-size: 0.9rem;
 }
 
 .SearchProductPage .containerMainContent .rightSideContent .containerRightSideContent {
   height: 100%;
 }
 
+.SearchProductPage .containerMainContent .rightSideContent .containerRightSideContent .textItemSorting {
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
 .SearchProductPage .containerMainContent .rightSideContent .containerRightSideContent .containerSticky {
   position: -webkit-sticky;
-  top: 10%;
   height: 90vh;
+  top: 5rem;
   position: sticky;
+}
+
+.SearchProductPage .containerMainContent .openShowModalSort {
+  animation-name: openShowModalSortAnime;
+}
+
+.SearchProductPage .containerMainContent .closeShowModalSort {
+  animation-name: closeShowModalSortAnime;
+}
+
+@keyframes openShowModalSortAnime {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: 10rem;
+    border: 1px solid aqua;
+  }
+}
+
+@keyframes closeShowModalSortAnime {
+  0% {
+    top: 10rem;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@media only screen and (max-width: 578px) {
+  .SearchProductPage .leftSideContent .containerSticky {
+    top: 5.5rem;
+  }
+  .SearchProductPage .rightSideContent {
+    overflow-y: auto;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: white;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@media only screen and (min-width: 578px) {
+  .SearchProductPage .leftSideContent .containerSticky {
+    top: 4.5rem;
+  }
+  .SearchProductPage .rightSideContent {
+    position: relative;
+    height: 100%;
+  }
 }
 
 .AccordionPrice {
@@ -985,7 +1167,7 @@ h2 {
 }
 
 .AccordionPrice .headerAccordion .titleHeader {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
 }
 
 .AccordionPrice .headerAccordion:hover {
@@ -994,14 +1176,16 @@ h2 {
 
 .AccordionPrice .bodyAccordion {
   overflow: hidden;
-  background-color: #7fc523;
+  background-color: white;
   position: absolute;
   animation-fill-mode: forwards;
   animation-duration: 0.3s;
+  height: 0px;
   z-index: -1;
 }
 
 .AccordionPrice .bodyAccordion .inputPrice {
+  font-size: 1rem;
   outline: none;
   border: none;
   border-bottom: 1px solid black;
@@ -1011,8 +1195,9 @@ h2 {
   -webkit-appearance: none;
 }
 
-.AccordionPrice .qq {
-  height: 100px;
+.AccordionPrice .bodyAccordion .labaleInputReng {
+  font-size: 1rem;
+  user-select: none;
 }
 
 .AccordionPrice .openBody {
@@ -1034,10 +1219,231 @@ h2 {
 
 @keyframes closeBodyAnime {
   0% {
-    height: 200%;
+    height: 300%;
   }
   100% {
     height: 0%;
   }
+}
+
+.FAQ .headerFaq {
+  height: 10rem;
+  background: black;
+  background: linear-gradient(0deg, black 10%, #8f1d1d 100%);
+}
+
+.FAQ .headerFaq .iconHeader,
+.FAQ .headerFaq .titleHeader {
+  font-size: 1.7rem;
+}
+
+.FAQ .bodyFaq .iconBody,
+.FAQ .bodyFaq .titleBody {
+  font-size: 1.5rem;
+}
+
+.FAQ .bodyFaq .accordionContainer .AccordionHeader {
+  font-size: 1.1rem;
+  text-align: right;
+}
+
+.FAQ .bodyFaq .accordionContainer .AccordionBody {
+  text-align: right;
+  font-size: 1rem;
+}
+
+.SellInShop .SellInShopHeader {
+  background: linear-gradient(rgba(77, 3, 11, 0) 30%, #6b0611 148.25%), url(../Img/SellInShopHeader.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+.SellInShop .whySellInShop {
+  background: url("../Img/backWhySell.png"), #6a1212;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.SellInShop .whySellInShop h1 {
+  font-size: 1.4rem;
+}
+
+.SellInShop .containerStepsSell .clipPath {
+  background: #ff00ee;
+  background: linear-gradient(86deg, #fdd3fa 28%, white 100%);
+  z-index: -2;
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
+
+.SellInShop .containerStepsSell .lineSteps {
+  border-top: 2px dashed rgba(0, 0, 0, 0.532);
+  z-index: -3;
+  width: 60%;
+}
+
+.SellInShop .containerStepsSell .containerContentStepsSell {
+  z-index: -1;
+}
+
+.SellInShop .containerStepsSell .containerContentStepsSell h1 {
+  border-bottom: 3px solid red;
+}
+
+.SellInShop .containerStepsSell .stepsBox {
+  z-index: -2;
+}
+
+.SellInShop .containerStepsSell .stepsBox .containerBox .IconTag {
+  background-color: #f1cfd5;
+}
+
+.SellInShop .containerStepsSell .stepsBox .containerBox .containerNumberStep {
+  top: 3rem;
+}
+
+.SellInShop .containerStepsSell .stepsBox .containerBox .containerNumberStep .numberStep {
+  background-color: red;
+}
+
+.SellInShop .containerStepsSell .stepsBox .containerBox .containerTitleBox {
+  top: 4.5rem;
+}
+
+.SellInShop .containerStepsSell .stepsBox .containerBox .containerTitleBox p {
+  text-align: center;
+}
+
+.SellInShop .AccordionHeader {
+  font-size: 1rem;
+  text-align: right;
+}
+
+.SellInShop .AccordionBody {
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+@media only screen and (max-width: 578px) {
+  .SellInShop .SellInShopHeader {
+    height: 12rem;
+  }
+  .SellInShop .SellInShopHeader .containerTextsHeader h1 {
+    font-size: 1.5rem;
+  }
+  .SellInShop .SellInShopHeader .containerTextsHeader p {
+    font-size: 1.1rem;
+  }
+  .SellInShop .whyDigiKala h1,
+  .SellInShop .commissionContainer h1 {
+    font-size: 1.1rem;
+  }
+  .SellInShop .whyDigiKala h3,
+  .SellInShop .commissionContainer h3 {
+    font-size: 0.9rem;
+  }
+  .SellInShop .whyDigiKala p,
+  .SellInShop .commissionContainer p {
+    font-size: 0.8rem;
+  }
+  .SellInShop .whyDigiKala span,
+  .SellInShop .commissionContainer span {
+    font-size: 1.3rem;
+  }
+  .SellInShop .containerStepsSell {
+    height: 12rem;
+  }
+  .SellInShop .containerStepsSell h1 {
+    font-size: 1.2rem;
+  }
+  .SellInShop .stepsBox .containerBox .IconTag {
+    font-size: 1.5rem;
+  }
+  .SellInShop .stepsBox .containerBox .numberStep {
+    font-size: 0.9rem;
+  }
+  .SellInShop .stepsBox .containerBox .containerTitleBox p {
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (min-width: 578px) {
+  .SellInShop .SellInShopHeader {
+    height: 60vh;
+  }
+  .SellInShop .SellInShopHeader .containerTextsHeader h1 {
+    font-size: 1.7rem;
+  }
+  .SellInShop .SellInShopHeader .containerTextsHeader p {
+    font-size: 1.5rem;
+  }
+  .SellInShop .whyDigiKala h1,
+  .SellInShop .commissionContainer h1 {
+    font-size: 1.3rem;
+  }
+  .SellInShop .whyDigiKala h3,
+  .SellInShop .commissionContainer h3 {
+    font-size: 1.2rem;
+  }
+  .SellInShop .whyDigiKala p,
+  .SellInShop .commissionContainer p {
+    font-size: 0.9rem;
+  }
+  .SellInShop .whyDigiKala span,
+  .SellInShop .commissionContainer span {
+    font-size: 1.5rem;
+  }
+  .SellInShop .containerStepsSell {
+    height: 15rem;
+  }
+  .SellInShop .containerBox .IconTag {
+    font-size: 1.7rem;
+  }
+  .SellInShop .containerBox .numberStep {
+    font-size: 1rem;
+  }
+  .SellInShop .containerBox .containerTitleBox p {
+    font-size: 1rem;
+  }
+}
+
+.ContactUs .inputContactUs {
+  outline: none;
+  caret-color: red;
+  border: 1px solid rgba(0, 0, 0, 0.406);
+}
+
+.ContactUs .boxCalender p {
+  font-size: 0.9rem;
+}
+
+.popupPad {
+  padding: 3rem !important;
+}
+
+.confirmButtonPad {
+  margin-top: 2rem !important;
+  padding: 0.5rem !important;
+}
+
+.ReturnProduct .headerFaq {
+  height: 10rem;
+  background: black;
+  background: linear-gradient(0deg, black 10%, #8f1d1d 100%);
+}
+
+.ReturnProduct .headerFaq .iconHeader,
+.ReturnProduct .headerFaq .titleHeader {
+  font-size: 1.7rem;
+}
+
+.WarrantyShop .accordionContainer .AccordionHeader {
+  font-size: 1.1rem;
+  text-align: right;
+}
+
+.WarrantyShop .accordionContainer .AccordionBody {
+  text-align: right;
+  font-size: 1rem;
 }
 /*# sourceMappingURL=base.css.map */

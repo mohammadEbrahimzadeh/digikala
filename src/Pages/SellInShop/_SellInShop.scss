@@ -1,0 +1,176 @@
+.SellInShop {
+  .SellInShopHeader {
+    background: linear-gradient(rgba(77, 3, 11, 0) 30%, rgb(107, 6, 17) 148.25%),
+      url(../Img/SellInShopHeader.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+  }
+  .whySellInShop {
+    background: url("../Img/backWhySell.png"), rgb(106, 18, 18);
+    background-repeat: no-repeat;
+    background-size: cover;
+    // height: 70vh;
+    h1 {
+      font-size: 1.4rem;
+    }
+  }
+  .containerStepsSell {
+    .clipPath {
+      background: rgb(255, 0, 238);
+      background: linear-gradient(
+        86deg,
+        rgb(253, 211, 250) 28%,
+        rgb(255, 255, 255) 100%
+      );
+      z-index: -2;
+
+      -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+      clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+    }
+    .lineSteps {
+      border-top: 2px dashed rgba(0, 0, 0, 0.532);
+      z-index: -3;
+      width: 60%;
+    }
+    .containerContentStepsSell {
+      z-index: -1;
+      h1 {
+        border-bottom: 3px solid red;
+      }
+    }
+    .stepsBox {
+      z-index: -2;
+      .containerBox {
+        .IconTag {
+          background-color: rgb(241, 207, 213);
+        }
+        .containerNumberStep {
+          top: 3rem;
+
+          .numberStep {
+            background-color: red;
+          }
+        }
+        .containerTitleBox {
+          top: 4.5rem;
+          p {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  .AccordionHeader {
+    font-size: 1rem;
+    text-align: right;
+  }
+  .AccordionBody {
+    font-size: 0.9rem;
+    text-align: right;
+  }
+}
+@media only screen and (max-width: 578px) {
+  .SellInShop {
+    .SellInShopHeader {
+      height: 12rem;
+
+      .containerTextsHeader {
+        h1 {
+          font-size: 1.5rem;
+        }
+        p {
+          font-size: 1.1rem;
+        }
+      }
+    }
+    .whyDigiKala,
+    .commissionContainer {
+      h1 {
+        font-size: 1.1rem;
+      }
+      h3 {
+        font-size: 0.9rem;
+      }
+      p {
+        font-size: 0.8rem;
+      }
+      span {
+        font-size: 1.3rem;
+      }
+    }
+    .containerStepsSell {
+      height: 12rem;
+      h1 {
+        font-size: 1.2rem;
+      }
+    }
+    .stepsBox {
+      .containerBox {
+        .IconTag {
+          font-size: 1.5rem;
+        }
+
+        .numberStep {
+          font-size: 0.9rem;
+        }
+
+        .containerTitleBox {
+          p {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 578px) {
+  .SellInShop {
+    .SellInShopHeader {
+      height: 60vh;
+
+      .containerTextsHeader {
+        h1 {
+          font-size: 1.7rem;
+        }
+        p {
+          font-size: 1.5rem;
+        }
+      }
+    }
+    .whyDigiKala,
+    .commissionContainer {
+      h1 {
+        font-size: 1.3rem;
+      }
+      h3 {
+        font-size: 1.2rem;
+      }
+      p {
+        font-size: 0.9rem;
+      }
+      span {
+        font-size: 1.5rem;
+      }
+    }
+    .containerStepsSell {
+      height: 15rem;
+    }
+    .containerBox {
+      .IconTag {
+        font-size: 1.7rem;
+      }
+
+      .numberStep {
+        font-size: 1rem;
+      }
+
+      .containerTitleBox {
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

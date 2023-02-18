@@ -21,7 +21,7 @@ export default function BestSelling({ ArrayProductApi }) {
           freeMode={true}
           modules={[Grid]}
           grid={{ rows: 3 }}
-          className="mySwiper "
+          className="mySwiper  d-flex align-items-center  justify-content-end"
           breakpoints={{
             0: {
               slidesPerView: 1,
@@ -37,10 +37,10 @@ export default function BestSelling({ ArrayProductApi }) {
             return (
               <SwiperSlide
                 key={item.id}
-                className="d-flex align-items-center  justify-content-end"
+                className="d-flex align-items-center  justify-content-start"
               >
                 <Link to={`/product/:${item.id}`}>
-                  <div className="d-flex p-0 gap-sm-0 align-items-center justify-content-evenly col-12  ">
+                  <div className="d-flex p-0 gap-sm-2 gap-1 align-items-center justify-content-start col-12  ">
                     <div className="col-2 col-sm-2  p-sm-0 d-flex align-items-center justify-content-center ">
                       <img src={item.image} className="w-100" alt="" />
                     </div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   AiOutlineArrowUp,
   AiFillLinkedin,
@@ -15,7 +16,12 @@ import Accordion from "react-bootstrap/Accordion";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import Card from "react-bootstrap/Card";
 import OptionsSendProduct from "../OptionsSendProduct/OptionsSendProduct";
+import Swal from "sweetalert2";
+
+import withReactContent from "sweetalert2-react-content";
+
 export default function Footer() {
+  const MySwal = withReactContent(Swal);
   const [showMoreFlag, setshowMoreFlag] = useState(false);
   function CustomToggle({ eventKey }) {
     const decoratedOnClick = useAccordionButton(eventKey, () => {
@@ -95,6 +101,19 @@ export default function Footer() {
               <button
                 className="p-1 rounded-3 p-sm-2 bg-danger text-white border-0"
                 style={{ fontSize: "0.9rem" }}
+                onClick={() =>
+                  MySwal.fire({
+                    title: (
+                      <span className="fs-4">
+                        این دکمه موقتا غیرفعال میباشد
+                      </span>
+                    ),
+                    customClass: {
+                      popup: "popupPad",
+                      confirmButton: "confirmButtonPad",
+                    },
+                  })
+                }
               >
                 ثبت
               </button>
@@ -118,9 +137,15 @@ export default function Footer() {
           </div>
           <div>
             <ul className="list-unstyled d-flex flex-column justify-content-start align-items-end gap-2">
-              <li className="liItemFooter">نحوه ثبت سفارش</li>
-              <li className="liItemFooter">رویه ارسال سفارش</li>
-              <li className="liItemFooter">شیوه پرداخت</li>
+              <Link className="bg-white" to="/ReturnProduct">
+                <li className="liItemFooter">نحوه ثبت سفارش</li>
+              </Link>
+              <Link className="bg-white" to="/ReturnProduct">
+                <li className="liItemFooter">رویه ارسال سفارش</li>
+              </Link>
+              <Link className="bg-white" to="/ReturnProduct">
+                <li className="liItemFooter">شیوه پرداخت</li>
+              </Link>
             </ul>
           </div>
         </div>
@@ -130,11 +155,18 @@ export default function Footer() {
           </div>
           <div>
             <ul className="list-unstyled d-flex flex-column justify-content-start align-items-end gap-2">
-              <li className="liItemFooter">پاسخ به پرسش های متداول</li>
-              <li className="liItemFooter">رویه های بازگرداندن کالا</li>
-              <li className="liItemFooter">شرایط استفاده</li>
-              <li className="liItemFooter">حریم خصوصی</li>
-              <li className="liItemFooter">گزارش باگ</li>
+              <Link className="bg-white" to="/faq">
+                <li className="liItemFooter">پاسخ به پرسش های متداول</li>
+              </Link>
+              <Link className="bg-white" to="/ReturnProduct">
+                <li className="liItemFooter">رویه های بازگرداندن کالا</li>
+              </Link>
+              <Link className="bg-white" to="/WarrantyShop">
+                <li className="liItemFooter">شرایط استفاده</li>
+              </Link>
+              <Link className="bg-white" to="/Privacy">
+                <li className="liItemFooter">حریم خصوصی</li>
+              </Link>
             </ul>
           </div>
         </div>
@@ -144,12 +176,15 @@ export default function Footer() {
           </div>
           <div>
             <ul className="list-unstyled d-flex flex-column justify-content-start align-items-end gap-2">
-              <li className="liItemFooter">اتاق خبر دیجیکالا</li>
-              <li className="liItemFooter">فروش در دیجیکالا</li>
-              <li className="liItemFooter">فرصت های شغلی</li>
-              <li className="liItemFooter">گزارش تخلف در دیجیکالا</li>
-              <li className="liItemFooter">تماس با دیجیکالا</li>
-              <li className="liItemFooter">درباره دیجیکالا</li>
+              <Link className="bg-white" to="/sell-in-shop">
+                <li className="liItemFooter">فروش در دیجیکالا</li>
+              </Link>
+              <Link className="bg-white" to="/contactUs">
+                <li className="liItemFooter">تماس با دیجیکالا</li>
+              </Link>
+              <Link className="bg-white" to="/contactUs">
+                <li className="liItemFooter">درباره دیجیکالا</li>
+              </Link>
             </ul>
           </div>
         </div>
@@ -262,7 +297,7 @@ export default function Footer() {
           </Accordion>
         </div>
       </div>
-      <div className=" col-12  d-flex justify-content-center align-items-center text-center">
+      <div className=" col-12 pb-3 d-flex justify-content-center align-items-center text-center">
         <p className="titleEndOfFooter">
           برای استفاده از مطالب دیجی‌کالا، داشتن «هدف غیرتجاری» و ذکر «منبع»
           کافیست. تمام حقوق اين وب‌سايت نیز برای شرکت نوآوران فن آوازه (فروشگاه

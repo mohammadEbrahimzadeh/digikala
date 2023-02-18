@@ -1,0 +1,31 @@
+.FAQ {
+  .headerFaq {
+    height: 10rem;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 1) 10%,
+      rgb(143, 29, 29) 100%
+    );
+    .iconHeader,
+    .titleHeader {
+      font-size: 1.7rem;
+    }
+  }
+  .bodyFaq {
+    .iconBody,
+    .titleBody {
+      font-size: 1.5rem;
+    }
+    .accordionContainer {
+      .AccordionHeader {
+        font-size: 1.1rem;
+        text-align: right;
+      }
+      .AccordionBody {
+        text-align: right;
+        font-size: 1rem;
+      }
+    }
+  }
+}
