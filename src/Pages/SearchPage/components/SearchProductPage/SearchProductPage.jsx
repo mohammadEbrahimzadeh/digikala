@@ -150,12 +150,12 @@ export default function SearchProductPage() {
           <div className="col-12 d-flex justify-content-end align-items-center">
             <p className="textTitleCategory">دسته بندی ها</p>
           </div>
-          <div className="col-12 d-flex align-items-center gap-2 justify-content-evenly">
+          <div className="col-12 d-flex align-items-center justify-content-evenly gap-2">
             <Swiper
               dir="rtl"
               freeMode={true}
               modules={[FreeMode]}
-              className="mySwiper col-12 gap-2 d-flex align-items-center justify-content-evenly "
+              className="mySwiper col-12 d-flex align-items-center justify-content-evenly gap-2 "
               breakpoints={{
                 0: { slidesPerView: 2, spaceBetween: 0 },
                 578: {
@@ -167,16 +167,18 @@ export default function SearchProductPage() {
               {ArrayCategorys.map((item, index) => {
                 return (
                   <SwiperSlide key={index}>
-                    <div className="col-12  p-3 ">
-                      <div className="col-12">
-                        <img src={item.logo} className="w-100" />
-                      </div>
-                      <div className="col-12">
-                        <p className="titleItemCategory text-center">
-                          {item.title_fa}
-                        </p>
-                      </div>
-                    </div>
+                    <Link className="col-12  p-3 " to={`/search/${item.code}`}>
+                      <div>
+                        <div className="col-12">
+                          <img src={item.logo} className="w-100" />
+                        </div>
+                        <div className="col-12">
+                          <p className="titleItemCategory text-center">
+                            {item.title_fa}
+                          </p>
+                        </div>
+                      </div>{" "}
+                    </Link>
                   </SwiperSlide>
                 );
               })}
@@ -187,7 +189,7 @@ export default function SearchProductPage() {
       {/* ---------------------- */}
       <div className="containerMainContent d-flex align-items-stretch justify-content-evenly">
         <div className="col-sm-9  col-12 leftSideContent ">
-          <div className="col-12 pe-sm-2 gap-2 gap-sm-4 d-none d-sm-flex justify-content-end align-items-center containerSticky pb-1 bg-white pt-3 ">
+          <div className="col-12 pe-sm-2 gap-sm-4 d-none d-sm-flex justify-content-end align-items-center containerSticky gap-2 bg-white pb-1 pt-3 ">
             <div className="">
               <p
                 className={`itemFilter text-center ${
@@ -213,7 +215,7 @@ export default function SearchProductPage() {
               </p>
             </div>
           </div>
-          <div className="col-12 bg-white d-flex d-sm-none justify-content-end align-items-center py-2  containerSticky ">
+          <div className="col-12 d-flex d-sm-none justify-content-end align-items-center containerSticky bg-white  py-2 ">
             <div className="">
               <p
                 className={`itemFilter text-center ${
@@ -251,7 +253,7 @@ export default function SearchProductPage() {
                     return (
                       <div
                         key={index}
-                        className="col-sm-6 col-12  p-3 d-flex align-items-center justify-content-evenly "
+                        className="col-sm-6 col-12  d-flex align-items-center justify-content-evenly p-3 "
                       >
                         <Link to={`/product/:${item.id}`}>
                           <div className="col-12 d-flex align-items-center justify-content-evenly flex-column gap-3">
@@ -266,14 +268,14 @@ export default function SearchProductPage() {
                             <div className="col-12  d-flex align-items-center justify-content-between flex-wrap">
                               <div className="d-flex justify-content-start align-items-center gap-1">
                                 <FaRegMoneyBillAlt></FaRegMoneyBillAlt>
-                                <p className="text-start textTitleItemProduct">
+                                <p className="textTitleItemProduct text-start">
                                   {current_price}
                                 </p>
                               </div>
                               {item.price.discount_percent > 0 ? (
                                 <>
                                   <div className="">
-                                    <p className=" textTitleItemProduct rounded-pill text-white p-1 text-center rounded  bg-danger ">
+                                    <p className=" textTitleItemProduct rounded-pill bg-danger rounded p-1 text-center  text-white ">
                                       {item.price.discount_percent}%
                                     </p>
                                   </div>
@@ -301,12 +303,12 @@ export default function SearchProductPage() {
         </div>
         {/* ------------------ */}
         <div
-          className={`col-sm-3 col-12  h-auto  d-non d-flex  justify-content-evenly  rightSideContent   align-items-start  ${
+          className={`col-sm-3 col-12  d-non  d-flex justify-content-evenly  rightSideContent  align-items-start   h-auto  ${
             ShowModalSort ? "openShowModalSort" : "closeShowModalSort"
           } `}
         >
           <div className={`containerRightSideContent col-12  `}>
-            <div className="col-12 text-end py-1 pe-2 d-sm-none  ">
+            <div className="col-12 d-sm-none py-1 pe-2 text-end  ">
               <AiOutlineClose
                 style={{ fontSize: "1.0rem" }}
                 onClick={() => {
@@ -319,9 +321,9 @@ export default function SearchProductPage() {
               <div className="col-12 px-3 py-1">
                 <p className="textItemSorting text-end">:مرتب سازی بر اساس</p>
               </div>
-              <div className="col-12 d-flex justify-content-center gap-3 align-items-center">
+              <div className="col-12 d-flex justify-content-center align-items-center gap-3">
                 <p
-                  className={`text-center textItemSorting ${
+                  className={`textItemSorting text-center ${
                     SortPriceMinValue ? "" : "text-danger"
                   }`}
                   onClick={() => {
@@ -331,7 +333,7 @@ export default function SearchProductPage() {
                   بیشترین قیمت
                 </p>
                 <p
-                  className={`text-center textItemSorting ${
+                  className={`textItemSorting text-center ${
                     SortPriceMinValue ? "text-danger" : ""
                   }`}
                   onClick={() => {

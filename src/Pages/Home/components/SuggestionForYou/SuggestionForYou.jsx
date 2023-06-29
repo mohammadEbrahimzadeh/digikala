@@ -3,7 +3,7 @@ import SuggestionBox from "./Components/SuggestionBox/SuggestionBox";
 export default function SuggestionForYou({ dataCategory }) {
   return (
     <>
-      <div className="SuggestionForYou flex-wrap px-3  d-flex justify-content-evenly align-items-center ">
+      <div className="SuggestionForYou d-flex justify-content-evenly  align-items-center flex-wrap px-3 ">
         {dataCategory.map((item) => {
           return (
             <SuggestionBox

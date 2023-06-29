@@ -4,14 +4,17 @@ import App from "./App";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 // eslint-disable-next-line
 import "swiper/css/bundle";
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
-  <BrowserRouter>
+  // <BrowserRouter>
+  <HashRouter>
     <App />
-  </BrowserRouter>
+  </HashRouter>
+  // </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

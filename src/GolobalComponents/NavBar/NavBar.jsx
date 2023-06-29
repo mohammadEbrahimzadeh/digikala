@@ -25,7 +25,10 @@ export default function NavBar() {
   const [Categorys, setCategorys] = useState();
   const [ValueInputSearch, setValueInputSearch] = useState("");
   const [ResultSearchArray, setResultSearchArray] = useState(null);
-  const [IsOpenMenuMobile, setIsOpenMenuMobile] = useState("");
+  const [IsOpenMenuMobile, setIsOpenMenuMobile] = useState({
+    isOpen: false,
+    className: "",
+  });
   let valueDebance = useMemo(() => ValueInputSearch, [ValueInputSearch]);
   let DebounceValueInput = UseDebounce(valueDebance, 500);
   useEffect(() => {
@@ -59,63 +62,78 @@ export default function NavBar() {
   };
   return (
     <>
-      <div className="NavBar overflow-hidden  position-sticky top-0 bg-white">
-        <div className="mainContainerNavbar   flex-wrap justify-content-between align-items-center  p-3 col-12 d-flex ">
-          <div className="  col-12 mb-3 position-relative d-flex align-items-center justify-content-center d-sm-none ">
+      <div className="NavBar position-sticky  top-0 bg-white">
+        <div className="mainContainerNavbar   justify-content-between align-items-center col-12  d-flex flex-wrap p-3 ">
+          <div className="  col-12 position-relative d-flex align-items-center justify-content-center d-sm-none mb-3 ">
             <div className="col-12 d-flex align-items-center justify-content-center">
               <Link
                 to="/"
-                className="col-12 d-flex bg-white align-items-center justify-content-center"
+                className="col-12 d-flex align-items-center justify-content-center bg-white"
               >
                 <img className="w-50 " src={logo} alt="logo" />
               </Link>
             </div>
             <div
-              className={`IconOpenMenuMobaile position-absolute end-0  d-flex justify-content-center  align-items-center d-sm-none 
+              className={`IconOpenMenuMobaile position-absolute d-flex  justify-content-center align-items-center  d-sm-none end-0 
           `}
             >
               <p
                 className="fs-4  mt-0 pt-0  text-center"
-                onClick={() => setIsOpenMenuMobile(true)}
+                onClick={() =>
+                  setIsOpenMenuMobile({
+                    isOpen: true,
+                    className: "openMenuMobile",
+                  })
+                }
               >
                 <AiOutlineMenu />
               </p>
             </div>
-            {console.log(IsOpenMenuMobile == false)}
             <div
-              className={`col-12  position-fixed  sectionMenu    ${
-                IsOpenMenuMobile ? "openMenuMobile " : "closeMenuMobile  "
-              } `}
+              className={`col-12  position-fixed  sectionMenu ${IsOpenMenuMobile.className} `}
               onClick={(e) => {
                 let classList = e.target.classList;
                 classList.forEach((item) => {
                   if (item == "sectionMenu") {
-                    setIsOpenMenuMobile(false);
+                    setIsOpenMenuMobile({
+                      isOpen: false,
+                      className: "closeMenuMobile",
+                    });
                   }
                 });
               }}
             >
               <div
-                className={`containerMenuMobile bg-white position-fixed p-3 d-flex 
-             align-items-center justify-content-start col-6  flex-column   ${
-               IsOpenMenuMobile ? "openMenuMobile" : "closeMenuMobile"
-             } `}
+                className={`containerMenuMobile position-fixed d-flex align-items-center justify-content-start 
+             col-6 flex-column bg-white  p-3   ${IsOpenMenuMobile.className} `}
               >
                 <div className="col-12 d-flex align-items-center justify-content-start">
                   <p
                     className="fs-4"
-                    onClick={() => setIsOpenMenuMobile(false)}
+                    onClick={() =>
+                      setIsOpenMenuMobile({
+                        isOpen: false,
+                        className: "closeMenuMobile",
+                      })
+                    }
                   >
                     <AiOutlineClose />
                   </p>
                 </div>
-                <ul className="list-unstyled col-12 text-center justify-content-center align-items-start d-flex flex-column gap-3">
+                <ul className="list-unstyled col-12 justify-content-center align-items-start d-flex flex-column gap-3 text-center">
                   <li className="col-12 ">
                     <NavLink
                       className={({ isActive }) =>
                         isActive ? " text-danger w-100 col-12" : " w-100 col-12"
                       }
                       to="/"
+                      onClick={() => {
+                        setshowSubmeny(false);
+                        setIsOpenMenuMobile({
+                          isOpen: false,
+                          className: "closeMenuMobile",
+                        });
+                      }}
                     >
                       <p className="fs-6">صفحه اصلی</p>
                     </NavLink>
@@ -125,7 +143,7 @@ export default function NavBar() {
                     onMouseLeave={leaveOnCatagory}
                     onMouseOver={hoverOnCatagory}
                   >
-                    <p className="fs-6">دسته بندی</p>
+                    <p className="fs-6"> دسته بندی</p>
                   </li>
                   <li className="col-12">
                     <NavLink
@@ -133,6 +151,13 @@ export default function NavBar() {
                         isActive ? " text-danger w-100 col-12" : " w-100 col-12"
                       }
                       to="/faq"
+                      onClick={() => {
+                        setshowSubmeny(false);
+                        setIsOpenMenuMobile({
+                          isOpen: false,
+                          className: "closeMenuMobile",
+                        });
+                      }}
                     >
                       <p className="fs-6">سوالات متداول</p>
                     </NavLink>
@@ -143,9 +168,9 @@ export default function NavBar() {
                     onMouseLeave={leaveOnCatagory}
                     className={`${
                       showSubmeny ? "d-block  bg-light " : "d-none"
-                    } subMenuMobile col-12 p-3 position-absolute   `}
+                    } subMenuMobile col-12 position-absolute p-3   `}
                   >
-                    <ul className="list-unstyled  col-12 text-end justify-content-center align-items-end gap-3 d-flex flex-column">
+                    <ul className="list-unstyled  col-12 justify-content-center align-items-end d-flex flex-column gap-3 text-end">
                       {Categorys
                         ? Categorys.categories.map((item) => {
                             return (
@@ -157,10 +182,13 @@ export default function NavBar() {
                                 to={`/search/${item.code}`}
                                 onClick={() => {
                                   setshowSubmeny(false);
-                                  setIsOpenMenuMobile(false);
+                                  setIsOpenMenuMobile({
+                                    isOpen: false,
+                                    className: "closeMenuMobile",
+                                  });
                                 }}
                               >
-                                <li className="text-center col-12 p-2 ">
+                                <li className="col-12 p-2 text-center ">
                                   {item.title_fa}
                                 </li>
                               </NavLink>
@@ -173,7 +201,7 @@ export default function NavBar() {
               </div>
             </div>
           </div>
-          <div className="  d-flex gap-3  align-items-center col-5  col-sm-3   justify-content-center">
+          <div className="  d-flex align-items-center  col-5 col-sm-3  justify-content-center   gap-3">
             <div className=" ">
               <button
                 className="p-0 "
@@ -200,7 +228,7 @@ export default function NavBar() {
               {" "}
               <div className="containerDivLogin ">
                 <button
-                  className="p-1 m-0 d-flex align-items-center "
+                  className="d-flex align-items-center m-0 p-1 "
                   onClick={() =>
                     MySwal.fire({
                       title: (
@@ -216,14 +244,14 @@ export default function NavBar() {
                   }
                 >
                   <p className="">ورود</p>
-                  <p className="  m-0 h-100">
+                  <p className="  h-100 m-0">
                     <BiLogIn />
                   </p>
                 </button>
               </div>
             </div>
           </div>
-          <div className="d-flex  col-7  gap-3 align-items-center justify-content-end">
+          <div className="d-flex  col-7  align-items-center justify-content-end gap-3">
             <div className=" col-sm-9 col-11 d-flex align-items-center  containerDivSearchInput">
               <input
                 value={ValueInputSearch}
@@ -258,7 +286,7 @@ export default function NavBar() {
                containerDivIcon  `}
               >
                 {ShowIconSearch ? (
-                  <p className="p-0 m-0" style={{ fontSize: "0.9rem" }}>
+                  <p className="m-0 p-0" style={{ fontSize: "0.9rem" }}>
                     <AiOutlineSearch></AiOutlineSearch>
                   </p>
                 ) : (
@@ -287,7 +315,7 @@ export default function NavBar() {
               ></div>
 
               <div
-                className={`resultsSearchModal    py-3 d-flex flex-column justify-content-start  align-items-end   ${
+                className={`resultsSearchModal  d-flex flex-column justify-content-start align-items-end  py-3   ${
                   ValueInputSearch ? "" : "d-none"
                 }`}
               >
@@ -357,10 +385,10 @@ export default function NavBar() {
                                   Navigate(`/search/${item}`);
                                   // setValueInputSearch(item);
                                 }}
-                                className="col-12 gap-1 d-flex justify-content-start align-items-center containerItemSearch px-1 py-3 "
+                                className="col-12 d-flex justify-content-start align-items-center containerItemSearch gap-1 px-1 py-3 "
                               >
                                 <AiOutlineSearch className="itemText"></AiOutlineSearch>
-                                <p className="text-end itemText">{item}</p>
+                                <p className="itemText text-end">{item}</p>
                               </div>
                             );
                           }
@@ -386,7 +414,7 @@ export default function NavBar() {
           </div>
         </div>
       </div>
-      <div className=" mainContainerMenu  d-none d-sm-block px-sm-5 p-1 position-sticky ">
+      <div className=" mainContainerMenu  d-none d-sm-block px-sm-5 position-sticky p-1 ">
         <ul className="list-unstyled justify-content-start align-items-center d-flex flex-row-reverse">
           <li className="col-2">
             <NavLink
@@ -421,9 +449,9 @@ export default function NavBar() {
             onMouseLeave={leaveOnCatagory}
             className={`${
               showSubmeny ? "d-block  bg-light " : "d-none"
-            } subMenu col-6 p-3 position-absolute   `}
+            } subMenu col-6 position-absolute p-3   `}
           >
-            <ul className="list-unstyled  text-end justify-content-center align-items-end gap-3 d-flex flex-column">
+            <ul className="list-unstyled  justify-content-center align-items-end d-flex flex-column gap-3 text-end">
               {Categorys
                 ? Categorys.categories.map((item) => {
                     return (
@@ -434,7 +462,7 @@ export default function NavBar() {
                         key={item.id}
                         to={`/search/${item.code}`}
                       >
-                        <li className="text-end  p-2 ">{item.title_fa}</li>
+                        <li className="p-2  text-end ">{item.title_fa}</li>
                       </NavLink>
                     );
                   })

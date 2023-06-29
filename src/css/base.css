@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0 !important;
   margin: 0 !important;
@@ -24,14 +25,12 @@ ul {
   font-family: Byekan;
   src: url("../Fonts/B_Yekan/Yekan.ttf");
 }
-
 a {
   color: black;
   text-decoration: none;
   transition: 0.3s;
   font-size: var(--fontsm);
 }
-
 a:hover {
   color: black;
   background-color: rgba(0, 0, 0, 0.205);
@@ -66,9 +65,7 @@ h2 {
   left: 40% !important;
 }
 
-.video-react
-.video-react-volume-menu-button.video-react-menu-button-inline
-.video-react-menu-content {
+.video-react .video-react-volume-menu-button.video-react-menu-button-inline .video-react-menu-content {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
@@ -95,7 +92,6 @@ h2 {
     --fontxxl: 6vw;
   }
 }
-
 @media only screen and (min-width: 577px) {
   :root {
     --fontmicro: 1.75vw;
@@ -106,47 +102,38 @@ h2 {
     --fontxxl: 3.5vw;
   }
 }
-
 .NavBar {
   z-index: 3;
 }
-
 .NavBar .mainContainerNavbar button {
   background-color: white;
   border: none;
   outline: none;
 }
-
 .NavBar .mainContainerNavbar input {
   border: none;
   outline: none;
   direction: rtl;
-  background-color: #eeeeee;
+  background-color: rgb(238, 238, 238);
 }
-
 .NavBar .mainContainerNavbar .focusInput {
   background-color: white;
   border: 0.5px solid rgba(0, 0, 0, 0.144);
   outline: none;
-  border-bottom: #00b7ff 2px solid;
+  border-bottom: rgb(0, 183, 255) 2px solid;
 }
-
 .NavBar .mainContainerNavbar .containerDivLogin {
   border: 0.5px solid rgba(0, 0, 0, 0.302);
 }
-
 .NavBar .mainContainerNavbar .containerDivLogin p {
   font-size: 0.8rem;
 }
-
 .NavBar .mainContainerNavbar .containerDivSearchInput {
   position: relative;
 }
-
 .NavBar .mainContainerNavbar .containerDivSearchInput input {
   z-index: 2;
 }
-
 .NavBar .mainContainerNavbar .containerDivSearchInput .containerDivIcon {
   position: absolute;
   left: 2%;
@@ -154,35 +141,29 @@ h2 {
   z-index: 3;
   background: none;
 }
-
 .NavBar .mainContainerNavbar .containerDivSearchInput .containerDivIcon button {
   width: 100%;
   padding: 0.5vw;
 }
-
 .NavBar .mainContainerNavbar .containerDivSearchInput .resultsSearchModal {
-  z-index: 2;
+  z-index: 4;
   overflow-y: auto;
   position: absolute;
   top: 100%;
-  height: 70vh;
+  height: 70rem !important;
   left: -85%;
   right: 0%;
   background-color: white;
 }
-
 .NavBar .mainContainerNavbar .containerDivSearchInput .resultsSearchModal .containerItemSearch:hover {
-  background-color: #cecece;
+  background-color: rgb(206, 206, 206);
 }
-
 .NavBar .mainContainerNavbar .containerDivSearchInput .resultsSearchModal .itemText {
   font-size: 1rem;
 }
-
 .NavBar .mainContainerNavbar .containerDivSearchInput .resultsSearchModal .itemTextSlider {
   font-size: 0.85rem;
 }
-
 .NavBar .mainContainerNavbar .containerDivSearchInput .backgroundModalResultSearch {
   position: fixed;
   left: 0;
@@ -197,62 +178,53 @@ h2 {
 .mainContainerMenu {
   z-index: 2;
 }
-
 .mainContainerMenu ul {
   z-index: 1;
   position: relative;
 }
-
 .mainContainerMenu ul li p {
   font-size: 1rem;
   width: 100%;
   text-align: center;
   cursor: pointer;
 }
-
 .mainContainerMenu ul li::after {
   content: "";
   display: block;
   width: 0;
   height: 2px;
-  background: #ff0e0e;
+  background: rgb(255, 14, 14);
   transition: width 0.3s;
 }
-
 .mainContainerMenu ul li:hover::after {
   width: 100%;
   cursor: pointer;
 }
-
 .mainContainerMenu ul li a p {
   font-size: 1rem;
   width: 100%;
   text-align: center;
   background-color: white;
 }
-
 .mainContainerMenu ul .subMenu {
   right: 16%;
   top: 100%;
   border: 1px solid rgba(0, 0, 0, 0.37);
 }
-
 .mainContainerMenu ul .subMenu li {
   width: 100%;
   text-align: center;
   transition: 0.1s;
   font-size: 1rem;
 }
-
 .mainContainerMenu ul .subMenu li::after {
   content: "";
   display: block;
   width: 0;
   height: 2px;
-  background: white;
+  background: rgb(255, 255, 255);
   transition: width 0.3s;
 }
-
 .mainContainerMenu ul .subMenu li:hover {
   width: 100%;
   color: red;
@@ -264,7 +236,9 @@ h2 {
   top: 0;
   bottom: 0;
   right: -100%;
+  -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
 
@@ -273,10 +247,11 @@ h2 {
   z-index: 31;
   top: 0;
   bottom: 0;
+  -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-
 .containerMenuMobile .subMenuMobile {
   overflow: auto;
   right: 100%;
@@ -284,37 +259,44 @@ h2 {
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.37);
 }
-
 .containerMenuMobile .subMenuMobile li {
   width: 100%;
   text-align: center;
   transition: 0.1s;
   font-size: 0.9rem;
 }
-
 .containerMenuMobile .subMenuMobile li::after {
   content: "";
   display: block;
   width: 0;
   height: 2px;
-  background: white;
+  background: rgb(255, 255, 255);
   transition: width 0.3s;
 }
-
 .containerMenuMobile .subMenuMobile li:hover {
   width: 100%;
   color: red;
 }
 
 .openMenuMobile {
+  -webkit-animation-name: openMenuMobileAnime;
   animation-name: openMenuMobileAnime;
 }
 
 .closeMenuMobile {
+  -webkit-animation-name: closeMenuMobileAnime;
   animation-name: closeMenuMobileAnime;
   right: -100%;
 }
 
+@-webkit-keyframes closeMenuMobileAnime {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: -100%;
+  }
+}
 @keyframes closeMenuMobileAnime {
   0% {
     right: 0%;
@@ -323,7 +305,14 @@ h2 {
     right: -100%;
   }
 }
-
+@-webkit-keyframes openMenuMobileAnime {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0%;
+  }
+}
 @keyframes openMenuMobileAnime {
   0% {
     right: -100%;
@@ -332,20 +321,17 @@ h2 {
     right: 0%;
   }
 }
-
 .Incredible a {
   background-color: white;
 }
-
 .Incredible .IncredibleContainerBoexes .imgCoverForCards {
+  -o-object-fit: cover;
   object-fit: cover;
 }
-
 .Incredible .swiper {
   width: 100%;
   height: 100%;
 }
-
 .Incredible .swiper-slide {
   text-align: center;
   font-size: 18px;
@@ -355,11 +341,11 @@ h2 {
   justify-content: center;
   align-items: center;
 }
-
 .Incredible .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -372,7 +358,6 @@ h2 {
     border-radius: 45px;
   }
 }
-
 @media only screen and (min-width: 577px) {
   .Incredible p {
     font-size: 1rem;
@@ -382,17 +367,15 @@ h2 {
     border-radius: 10px;
   }
 }
-
 .Slider .containerSlideSwiper {
   height: 50vh;
 }
-
 .Slider .containerSlideSwiper .swiper {
   height: 100%;
   width: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
-
 .Slider .containerSlideSwiper .swiper-slide {
   text-align: center;
   /* Center slide text vertically */
@@ -400,7 +383,6 @@ h2 {
   justify-content: center;
   align-items: center;
 }
-
 .Slider .containerSlideSwiper .swiper {
   width: 100%;
   height: 100%;
@@ -413,41 +395,35 @@ h2 {
     height: 20vh;
   }
 }
-
 @media only screen and (min-width: 578px) {
   .imgSliderHeaderHome {
     height: 50vh;
   }
 }
-
 @media only screen and (max-width: 700px) {
   .Home .containerSlideSwiper {
     height: 20vh;
     width: 100%;
   }
 }
-
 @media only screen and (min-width: 800px) {
   .CategoriesItemsHome p {
     font-size: 1.3rem;
   }
 }
-
 @media only screen and (min-width: 800px) {
   .RecommendationSubCategories p {
     font-size: 1.3rem;
   }
 }
-
 .DigiplusBaner {
   background-color: #772169;
 }
-
 .DigiplusBaner .picBsnerDigiplsud {
+  -o-object-fit: cover;
   object-fit: cover;
   width: 90%;
 }
-
 @media only screen and (max-width: 578px) {
   .DigiplusBaner .leftDIvMainDigiPlus span {
     font-size: 0.8rem;
@@ -456,57 +432,47 @@ h2 {
     overflow: scroll;
   }
 }
-
 @media only screen and (min-width: 578px) {
   .DigiplusBaner .leftDIvMainDigiPlus span {
     font-size: 0.7rem;
   }
 }
-
 @media only screen and (min-width: 820px) {
   .DigiplusBaner .leftDIvMainDigiPlus span {
     font-size: 1rem;
   }
 }
-
 .BestSelling a {
   background-color: white;
 }
-
 .BestSelling .BestSellingBoxContainer {
   height: 20rem;
   direction: rtl;
 }
-
 .BestSelling .BestSellingBoxContainer .numberDescriptionBox {
   font-size: 1.5rem;
 }
-
 .BestSelling .BestSellingBoxContainer::-webkit-scrollbar {
   height: 0.5rem;
 }
-
 .BestSelling .BestSellingBoxContainer::-webkit-scrollbar-thumb {
   background: rgba(128, 128, 128, 0.466);
   border-radius: 10px;
 }
-
 .BestSelling .mySwiper {
   display: flex;
   flex-wrap: wrap;
 }
-
 .BestSelling .swiper {
   width: 100%;
   height: 100%;
   margin-left: auto;
   margin-right: auto;
 }
-
 .BestSelling .swiper-slide {
   text-align: center;
   background: #fff;
-  height: calc((100%) / 3) !important;
+  height: 33.3333333333% !important;
 }
 
 @media only screen and (max-width: 578px) {
@@ -517,7 +483,6 @@ h2 {
     font-size: 1.5rem;
   }
 }
-
 @media only screen and (min-width: 578px) {
   .BestSelling .BestSellingBoxContainer .descriptionBox {
     font-size: 0.9rem;
@@ -526,29 +491,23 @@ h2 {
     font-size: 1.5rem;
   }
 }
-
 .modalProdacts {
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.362);
 }
-
 .modalProdacts .divContainerModal {
   overflow: hidden;
 }
-
 .modalProdacts .divContainerModal .mainDivCOntentModal {
   height: 93%;
 }
-
 .modalProdacts .divContainerModal .mainDivCOntentModal .mainDivForMiniPhotosProduct {
   overflow-y: auto;
 }
-
 .modalProdacts .divContainerModal .mainDivCOntentModal .mainDivSlider .swiper {
   width: 100%;
   height: 100%;
 }
-
 .modalProdacts .divContainerModal .mainDivCOntentModal .mainDivSlider .swiper-slide {
   text-align: center;
   font-size: 18px;
@@ -558,10 +517,10 @@ h2 {
   justify-content: center;
   align-items: center;
 }
-
 .modalProdacts .divContainerModal .mainDivCOntentModal .mainDivSlider .swiper-slide img {
   display: block;
   width: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -570,7 +529,6 @@ h2 {
     font-size: 0.9rem;
   }
 }
-
 @media only screen and (min-width: 578px) {
   .modalProdacts .divContainerModal {
     height: 82%;
@@ -580,36 +538,31 @@ h2 {
     font-size: 1.2rem;
   }
 }
-
 .mainDivModal {
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.362);
   overflow-y: scroll;
 }
-
 .mainDivModal .containerComments {
-  background-color: #dadada;
+  background-color: rgb(218, 218, 218);
 }
-
 .mainDivModal .containerComments {
   overflow-x: auto;
 }
-
 .mainDivModal .buyerBadage {
-  background-color: #eeeeee;
-  color: #6d6d6d;
+  background-color: rgb(238, 238, 238);
+  color: rgb(109, 109, 109);
   font-size: 0.8rem;
 }
 
 @media only screen and (min-width: 578px) {
   .commentCard {
-    border-bottom: 1px solid #bdbdbd;
+    border-bottom: 1px solid rgb(189, 189, 189);
   }
   .titleComent {
     font-size: 1.1rem;
   }
 }
-
 .BreadcrumbOfHeader .BreadcrumForProcuct {
   font-size: 0.7rem;
   text-align: end;
@@ -620,40 +573,32 @@ h2 {
 .mainDataDivPriduct .titleProduct {
   font-size: 1rem;
 }
-
 .mainDataDivPriduct .titleServiseDiscription,
 .mainDataDivPriduct .listOption,
 .mainDataDivPriduct .btnBuyProduct {
   font-size: 1rem;
 }
-
 .mainDataDivPriduct .discriptionSeller,
 .mainDataDivPriduct .discriptionProductrating {
   font-size: 0.8rem;
 }
-
 .mainDataDivPriduct .containerColorsProduct {
   overflow-x: auto;
 }
-
 .mainDataDivPriduct .listOption::before {
-  content: " \2022 ";
-  color: #868383;
+  content: " •";
+  color: rgb(134, 131, 131);
   margin-left: 0.5rem;
 }
-
 .mainDataDivPriduct .listOption .titleOption {
-  color: #868383;
+  color: rgb(134, 131, 131);
 }
-
 .mainDataDivPriduct .iconOptionVipUser {
-  color: #943db1;
+  color: rgb(148, 61, 177);
 }
-
 .mainDataDivPriduct .SliderProduct .mySwiper {
   width: 100%;
 }
-
 .mainDataDivPriduct .SliderProduct .swiper-slide {
   text-align: center;
   text-align: center;
@@ -664,9 +609,9 @@ h2 {
   justify-content: center;
   align-items: center;
 }
-
 .mainDataDivPriduct .SliderProduct .swiper-slide img {
   width: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -675,10 +620,10 @@ h2 {
     font-size: 1.2rem;
   }
   .mainDataDivPriduct .boederSectionTop {
-    border-top: 10px solid #eae9e9;
+    border-top: 10px solid rgb(234, 233, 233);
   }
   .mainDataDivPriduct .containerForPriceProduct button {
-    font-size: 00.8rem;
+    font-size: 0.8rem;
     font-weight: bold;
   }
   .mainDataDivPriduct .titleContainerDivseller {
@@ -691,10 +636,9 @@ h2 {
     font-size: 0.9rem;
   }
 }
-
 @media only screen and (min-width: 578px) {
   .mainDataDivPriduct .divContainerSelling {
-    background-color: #eeebeb;
+    background-color: rgb(238, 235, 235);
   }
   .mainDataDivPriduct .titleProduct {
     font-size: 1.2rem;
@@ -706,20 +650,16 @@ h2 {
     font-size: 1.2rem;
   }
 }
-
 .Recommendations a {
   background-color: white;
 }
-
 .Recommendations .sliderRecommendations {
   height: 100%;
 }
-
 .Recommendations .sliderRecommendations .swiper {
   width: 100%;
   height: 100%;
 }
-
 .Recommendations .sliderRecommendations .swiper-slide {
   text-align: center;
   background: #fff;
@@ -729,8 +669,8 @@ h2 {
   align-items: flex-start;
   height: 100%;
 }
-
 .Recommendations .sliderRecommendations img {
+  -o-object-fit: cover;
   object-fit: cover;
   height: 18vh;
 }
@@ -743,7 +683,6 @@ h2 {
     font-size: 0.9rem;
   }
 }
-
 @media only screen and (min-width: 578px) {
   .Recommendations .titleRecommendations {
     font-size: 0.9rem;
@@ -752,7 +691,6 @@ h2 {
     font-size: 1.3rem;
   }
 }
-
 @media only screen and (max-width: 578px) {
   .InformaintionProduct .headerInfoProduct {
     font-size: 0.8rem;
@@ -761,7 +699,6 @@ h2 {
     font-size: 1rem;
   }
 }
-
 @media only screen and (min-width: 578px) {
   .InformaintionProduct .headerInfoProduct {
     font-size: 1.1rem;
@@ -770,7 +707,6 @@ h2 {
     font-size: 1.3rem;
   }
 }
-
 .containerPageNaite .baseClassPageNaite {
   font-size: 1.1rem;
   background-color: white;
@@ -780,28 +716,25 @@ h2 {
   justify-content: center;
   transition: 0s;
 }
-
 .containerPageNaite .baseClassPageNaite:hover {
   border: 2px solid red;
   color: red;
   border-radius: 51%;
-  width: calc(20vw / 6);
-  height: calc(20vw / 6);
+  width: 3.3333333333vw;
+  height: 3.3333333333vw;
   background-color: white;
 }
-
 .containerPageNaite .activePage {
   border-radius: 51%;
-  width: calc(20vw / 6);
-  height: calc(20vw / 6);
+  width: 3.3333333333vw;
+  height: 3.3333333333vw;
   color: white;
   background-color: red;
   border-radius: 51%;
-  width: calc(20vw / 6);
+  width: 3.3333333333vw;
   transition: 0s;
-  height: calc(20vw / 6);
+  height: 3.3333333333vw;
 }
-
 .containerPageNaite .titleComent,
 .containerPageNaite .buyerBadage {
   font-size: 1.1rem;
@@ -810,7 +743,6 @@ h2 {
 .LastCommentsInDekstop .titleComponent {
   font-size: 1.1rem;
 }
-
 .LastCommentsInDekstop .buyerBadage,
 .LastCommentsInDekstop .titleComent {
   font-size: 1rem;
@@ -821,28 +753,23 @@ h2 {
     font-size: 1rem;
   }
 }
-
 @media only screen and (min-width: 578px) {
   .LastCommentsInDekstop .titleComponent {
     font-size: 1.3rem;
   }
 }
-
 .LastCommentsInMobile .titleComponent {
   font-size: 0.9rem;
 }
-
 .LastCommentsInMobile .buyerBadage,
 .LastCommentsInMobile .MoreCommentsBtn,
 .LastCommentsInMobile .titleComent {
   font-size: 0.8rem;
 }
-
 .LastCommentsInMobile .swiper {
   width: 100%;
   height: 100%;
 }
-
 .LastCommentsInMobile .swiper-slide {
   text-align: center;
   font-size: 18px;
@@ -853,28 +780,25 @@ h2 {
   justify-content: center;
   align-items: center;
 }
-
 .LastCommentsInMobile .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
 .ModalMoreCommentsMobile {
   z-index: 10;
-  background-color: gainsboro;
+  background-color: rgb(220, 220, 220);
 }
-
 .ModalMoreCommentsMobile .commentCard {
   border-radius: 15px;
 }
-
 .ModalMoreCommentsMobile .commentCard .titleComent,
 .ModalMoreCommentsMobile .commentCard .buyerBadage {
   font-size: 0.8rem;
 }
-
 .ModalMoreCommentsMobile .baseClassPageNaite {
   font-size: 1.1rem;
   vertical-align: middle;
@@ -883,17 +807,15 @@ h2 {
   justify-content: center;
   transition: 0s;
 }
-
 .ModalMoreCommentsMobile .activePage {
   border-radius: 51%;
-  width: calc(60vw / 6);
-  height: calc(60vw / 6);
+  width: 10vw;
+  height: 10vw;
   color: white;
   background-color: red;
   border-radius: 51%;
   transition: 0s;
 }
-
 .ModalMoreCommentsMobile .titleComent,
 .ModalMoreCommentsMobile .buyerBadage {
   font-size: 0.9rem;
@@ -903,32 +825,26 @@ h2 {
   font-size: 0.9rem;
   direction: rtl;
 }
-
 .Footer .contactTitleHeaderInFooter,
 .Footer .contactTitleMediaInFooter {
   font-size: 0.7rem;
 }
-
 .Footer .iconMediaFooter:hover {
   color: rgba(0, 0, 0, 0.685);
 }
-
 .Footer .inputEmailInFooter {
   outline: none;
-  background-color: #eaeaea;
+  background-color: rgb(234, 234, 234);
   height: 5vh;
   border: none;
   font-size: 0.9rem;
 }
-
 .Footer .liItemFooter {
   transition: 0.2s;
 }
-
 .Footer .liItemFooter:hover {
   color: red;
 }
-
 .Footer .titleEndOfFooter {
   font-size: 0.7rem;
 }
@@ -947,7 +863,6 @@ h2 {
     font-size: 0.9rem;
   }
 }
-
 @media only screen and (min-width: 578px) {
   .Footer .titleLiFooter {
     font-size: 0.8rem;
@@ -962,7 +877,6 @@ h2 {
     font-size: 0.9rem;
   }
 }
-
 @media only screen and (min-width: 657px) {
   .Footer .titleLiFooter {
     font-size: 1rem;
@@ -971,12 +885,12 @@ h2 {
     font-size: 0.8rem;
   }
 }
-
 .OptionsSendProduct .descriptionBoxsServices {
   font-size: 0.9em;
 }
 
 .grayAllElems {
+  -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
 
@@ -984,18 +898,22 @@ h2 {
   z-index: 12;
   background-color: rgba(0, 0, 0, 0.41);
 }
-
 .Loader .classic-7 {
   font-weight: bold;
   font-family: monospace;
   font-size: 1.3rem;
-  color: #0000;
+  color: rgba(0, 0, 0, 0);
   background: linear-gradient(90deg, red calc(50% + 0.5ch), #000 0) right/calc(200% + 1ch) 100%;
   -webkit-background-clip: text;
   background-clip: text;
+  -webkit-animation: c7 1s infinite steps(11);
   animation: c7 1s infinite steps(11);
 }
-
+@-webkit-keyframes c7 {
+  to {
+    background-position: left;
+  }
+}
 @keyframes c7 {
   to {
     background-position: left;
@@ -1005,13 +923,12 @@ h2 {
 .Slider .containerSlideSwiper {
   height: 50vh;
 }
-
 .Slider .containerSlideSwiper .swiper {
   height: 100%;
   width: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
-
 .Slider .containerSlideSwiper .swiper-slide {
   text-align: center;
   /* Center slide text vertically */
@@ -1019,7 +936,6 @@ h2 {
   justify-content: center;
   align-items: center;
 }
-
 .Slider .containerSlideSwiper .swiper {
   width: 100%;
   height: 100%;
@@ -1032,80 +948,76 @@ h2 {
     height: 20vh;
   }
 }
-
 @media only screen and (min-width: 578px) {
   .imgSliderHeaderHome {
     height: 50vh;
   }
 }
-
 @media only screen and (max-width: 700px) {
   .Home .containerSlideSwiper {
     height: 20vh;
     width: 100%;
   }
 }
-
 .SearchProductPage a {
   background-color: white;
 }
-
 .SearchProductPage .headerPage .textTitleCategory {
   font-size: 1.3rem;
 }
-
 .SearchProductPage .headerPage .titleItemCategory {
   font-size: 0.9rem;
 }
-
 .SearchProductPage .containerMainContent .leftSideContent {
   position: relative;
   height: 100%;
 }
-
 .SearchProductPage .containerMainContent .leftSideContent .containerSticky {
+  position: -webkit-sticky;
   position: sticky;
 }
-
 .SearchProductPage .containerMainContent .leftSideContent .itemFilter {
   font-size: 0.9rem;
   transition: 0.3s;
 }
-
 .SearchProductPage .containerMainContent .leftSideContent .itemFilter:hover {
   color: red;
   cursor: pointer;
   border-bottom: 2px solid red;
 }
-
 .SearchProductPage .containerMainContent .leftSideContent .textTitleItemProduct {
   font-size: 0.9rem;
 }
-
 .SearchProductPage .containerMainContent .rightSideContent .containerRightSideContent {
   height: 100%;
 }
-
 .SearchProductPage .containerMainContent .rightSideContent .containerRightSideContent .textItemSorting {
   font-size: 0.9rem;
   transition: 0.3s;
 }
-
 .SearchProductPage .containerMainContent .rightSideContent .containerRightSideContent .containerSticky {
   position: -webkit-sticky;
   height: 90vh;
   top: 5rem;
   position: sticky;
 }
-
 .SearchProductPage .containerMainContent .openShowModalSort {
+  -webkit-animation-name: openShowModalSortAnime;
   animation-name: openShowModalSortAnime;
 }
-
 .SearchProductPage .containerMainContent .closeShowModalSort {
+  -webkit-animation-name: closeShowModalSortAnime;
   animation-name: closeShowModalSortAnime;
 }
-
+@-webkit-keyframes openShowModalSortAnime {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: 10rem;
+    border: 1px solid aqua;
+  }
+}
 @keyframes openShowModalSortAnime {
   0% {
     top: 100%;
@@ -1115,7 +1027,14 @@ h2 {
     border: 1px solid aqua;
   }
 }
-
+@-webkit-keyframes closeShowModalSortAnime {
+  0% {
+    top: 10rem;
+  }
+  100% {
+    top: 100%;
+  }
+}
 @keyframes closeShowModalSortAnime {
   0% {
     top: 10rem;
@@ -1140,11 +1059,12 @@ h2 {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     background-color: white;
+    -webkit-animation-duration: 0.3s;
     animation-duration: 0.3s;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
   }
 }
-
 @media only screen and (min-width: 578px) {
   .SearchProductPage .leftSideContent .containerSticky {
     top: 4.5rem;
@@ -1154,60 +1074,67 @@ h2 {
     height: 100%;
   }
 }
-
 .AccordionPrice {
   position: relative;
 }
-
 .AccordionPrice .headerAccordion {
   z-index: 1;
   background-color: white;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
-
 .AccordionPrice .headerAccordion .titleHeader {
   font-size: 0.8rem;
 }
-
 .AccordionPrice .headerAccordion:hover {
   border: 2px solid aqua;
 }
-
 .AccordionPrice .bodyAccordion {
   overflow: hidden;
   background-color: white;
   position: absolute;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  -webkit-animation-duration: 0.3s;
   animation-duration: 0.3s;
   height: 0px;
   z-index: -1;
 }
-
 .AccordionPrice .bodyAccordion .inputPrice {
   font-size: 1rem;
   outline: none;
   border: none;
   border-bottom: 1px solid black;
 }
-
 .AccordionPrice .bodyAccordion .inputPrice::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
-
 .AccordionPrice .bodyAccordion .labaleInputReng {
   font-size: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
-
 .AccordionPrice .openBody {
+  -webkit-animation-name: openBodyAnime;
   animation-name: openBodyAnime;
 }
-
 .AccordionPrice .closeBody {
+  -webkit-animation-name: closeBodyAnime;
   animation-name: closeBodyAnime;
 }
-
+@-webkit-keyframes openBodyAnime {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 300%;
+  }
+}
 @keyframes openBodyAnime {
   0% {
     height: 0;
@@ -1216,7 +1143,14 @@ h2 {
     height: 300%;
   }
 }
-
+@-webkit-keyframes closeBodyAnime {
+  0% {
+    height: 300%;
+  }
+  100% {
+    height: 0%;
+  }
+}
 @keyframes closeBodyAnime {
   0% {
     height: 300%;
@@ -1228,97 +1162,80 @@ h2 {
 
 .FAQ .headerFaq {
   height: 10rem;
-  background: black;
-  background: linear-gradient(0deg, black 10%, #8f1d1d 100%);
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgb(0, 0, 0) 10%, rgb(143, 29, 29) 100%);
 }
-
 .FAQ .headerFaq .iconHeader,
 .FAQ .headerFaq .titleHeader {
   font-size: 1.7rem;
 }
-
 .FAQ .bodyFaq .iconBody,
 .FAQ .bodyFaq .titleBody {
   font-size: 1.5rem;
 }
-
 .FAQ .bodyFaq .accordionContainer .AccordionHeader {
   font-size: 1.1rem;
   text-align: right;
 }
-
 .FAQ .bodyFaq .accordionContainer .AccordionBody {
   text-align: right;
   font-size: 1rem;
 }
 
 .SellInShop .SellInShopHeader {
-  background: linear-gradient(rgba(77, 3, 11, 0) 30%, #6b0611 148.25%), url(../Img/SellInShopHeader.png);
+  background: linear-gradient(rgba(77, 3, 11, 0) 30%, rgb(107, 6, 17) 148.25%), url(../Img/SellInShopHeader.png);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
 }
-
 .SellInShop .whySellInShop {
-  background: url("../Img/backWhySell.png"), #6a1212;
+  background: url("../Img/backWhySell.png"), rgb(106, 18, 18);
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 .SellInShop .whySellInShop h1 {
   font-size: 1.4rem;
 }
-
 .SellInShop .containerStepsSell .clipPath {
-  background: #ff00ee;
-  background: linear-gradient(86deg, #fdd3fa 28%, white 100%);
+  background: rgb(255, 0, 238);
+  background: linear-gradient(86deg, rgb(253, 211, 250) 28%, rgb(255, 255, 255) 100%);
   z-index: -2;
+  -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
   clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
 }
-
 .SellInShop .containerStepsSell .lineSteps {
   border-top: 2px dashed rgba(0, 0, 0, 0.532);
   z-index: -3;
   width: 60%;
 }
-
 .SellInShop .containerStepsSell .containerContentStepsSell {
   z-index: -1;
 }
-
 .SellInShop .containerStepsSell .containerContentStepsSell h1 {
   border-bottom: 3px solid red;
 }
-
 .SellInShop .containerStepsSell .stepsBox {
   z-index: -2;
 }
-
 .SellInShop .containerStepsSell .stepsBox .containerBox .IconTag {
-  background-color: #f1cfd5;
+  background-color: rgb(241, 207, 213);
 }
-
 .SellInShop .containerStepsSell .stepsBox .containerBox .containerNumberStep {
   top: 3rem;
 }
-
 .SellInShop .containerStepsSell .stepsBox .containerBox .containerNumberStep .numberStep {
   background-color: red;
 }
-
 .SellInShop .containerStepsSell .stepsBox .containerBox .containerTitleBox {
   top: 4.5rem;
 }
-
 .SellInShop .containerStepsSell .stepsBox .containerBox .containerTitleBox p {
   text-align: center;
 }
-
 .SellInShop .AccordionHeader {
   font-size: 1rem;
   text-align: right;
 }
-
 .SellInShop .AccordionBody {
   font-size: 0.9rem;
   text-align: right;
@@ -1366,7 +1283,6 @@ h2 {
     font-size: 0.9rem;
   }
 }
-
 @media only screen and (min-width: 578px) {
   .SellInShop .SellInShopHeader {
     height: 60vh;
@@ -1406,13 +1322,11 @@ h2 {
     font-size: 1rem;
   }
 }
-
 .ContactUs .inputContactUs {
   outline: none;
   caret-color: red;
   border: 1px solid rgba(0, 0, 0, 0.406);
 }
-
 .ContactUs .boxCalender p {
   font-size: 0.9rem;
 }
@@ -1428,10 +1342,9 @@ h2 {
 
 .ReturnProduct .headerFaq {
   height: 10rem;
-  background: black;
-  background: linear-gradient(0deg, black 10%, #8f1d1d 100%);
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgb(0, 0, 0) 10%, rgb(143, 29, 29) 100%);
 }
-
 .ReturnProduct .headerFaq .iconHeader,
 .ReturnProduct .headerFaq .titleHeader {
   font-size: 1.7rem;
@@ -1441,9 +1354,7 @@ h2 {
   font-size: 1.1rem;
   text-align: right;
 }
-
 .WarrantyShop .accordionContainer .AccordionBody {
   text-align: right;
   font-size: 1rem;
-}
-/*# sourceMappingURL=base.css.map */
+}/*# sourceMappingURL=base.css.map */

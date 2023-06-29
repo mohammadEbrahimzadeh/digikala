@@ -1,5 +1,6 @@
 .NavBar {
   z-index: 3;
+  // overflow: hidden;
   .mainContainerNavbar {
     button {
       background-color: white;
@@ -50,12 +51,11 @@
         }
       }
       .resultsSearchModal {
-        z-index: 2;
-
+        z-index: 4;
         overflow-y: auto;
         position: absolute;
         top: 100%;
-        height: 70vh;
+        height: 70rem !important;
         left: -85%;
         right: 0%;
         background-color: white;
@@ -71,6 +71,7 @@
           font-size: 0.85rem;
         }
       }
+
       .backgroundModalResultSearch {
         position: fixed;
         left: 0;
@@ -155,18 +156,17 @@
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
   -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
 .containerMenuMobile {
   right: -100%;
-
   z-index: 31;
   top: 0;
   bottom: 0;
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
   -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
   .subMenuMobile {
     overflow: auto;
     right: 100%;
