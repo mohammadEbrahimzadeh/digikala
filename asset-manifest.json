@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/digikala/static/css/main.6850179a.css",
+    "main.js": "/digikala/static/js/main.3030ee32.js",
+    "static/media/whySellInShop.mp4": "/digikala/static/media/whySellInShop.dc5c7206bd9139e4f5d5.mp4",
+    "static/media/7.jpg": "/digikala/static/media/7.0506f9519af469061d62.jpg",
+    "static/media/SellInShopHeader.png": "/digikala/static/media/SellInShopHeader.86a38058fa2c4cf3e0c8.png",
+    "static/media/3.jpg": "/digikala/static/media/3.dc7bc198b10ab8f51a4e.jpg",
+    "static/media/4.jpg": "/digikala/static/media/4.cdf9c669a15340d8bfbc.jpg",
+    "static/media/5.jpg": "/digikala/static/media/5.cdf9c669a15340d8bfbc.jpg",
+    "static/media/6.jpg": "/digikala/static/media/6.9a50303f3e9fbc8df437.jpg",
+    "static/media/2.jpg": "/digikala/static/media/2.acf95bae3adc86351685.jpg",
+    "static/media/8.jpg": "/digikala/static/media/8.91fe90e7dc318f9d762c.jpg",
+    "static/media/map.png": "/digikala/static/media/map.24e561489587921785ba.png",
+    "static/media/9.png": "/digikala/static/media/9.f003b867fa3aff07a918.png",
+    "static/media/digiplusPicBaner.png": "/digikala/static/media/digiplusPicBaner.97b7dc4158f2037c942e.png",
+    "static/media/Yekan.ttf": "/digikala/static/media/Yekan.012789e6e9f8b9a4929f.ttf",
+    "static/media/kasbokar.png": "/digikala/static/media/kasbokar.20d2be1a97c7e17a17ff.png",
+    "static/media/rezi.png": "/digikala/static/media/rezi.42df37e1cd4303ab272e.png",
+    "static/media/box.png": "/digikala/static/media/box.fa9cdd6c9c40d5560042.png",
+    "static/media/backWhySell.png": "/digikala/static/media/backWhySell.817536ab788192b35cd0.png",
+    "static/media/logo.svg": "/digikala/static/media/logo.99fe6b51f67094b905a09e5a55ff61f2.svg",
+    "index.html": "/digikala/index.html",
+    "main.6850179a.css.map": "/digikala/static/css/main.6850179a.css.map",
+    "main.3030ee32.js.map": "/digikala/static/js/main.3030ee32.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6850179a.css",
+    "static/js/main.3030ee32.js"
+  ]
+}
